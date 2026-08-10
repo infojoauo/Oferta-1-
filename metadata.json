@@ -1,0 +1,6 @@
+{
+  "name": "Kit Terapéutico para Adolescentes — Página de Ventas",
+  "description": "Página de ventas completa, profesional y moderna para el Kit Terapéutico para Adolescentes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
