@@ -1,95 +1,87 @@
 import React from 'react';
-import { ArrowRight, Zap, ShieldCheck, Lock } from 'lucide-react';
+import { Layers, Zap, FolderCheck, Eye, FileText, Sliders, ArrowRight } from 'lucide-react';
+import { WHY_CHOOSE_ITEMS } from '../config';
 
 interface WhyChooseProps {
   onScrollToOffers?: () => void;
 }
 
+const getBenefitIcon = (iconName: string) => {
+  switch (iconName) {
+    case 'Layers': return <Layers className="w-6 h-6 text-[#2D5A27]" />;
+    case 'Zap': return <Zap className="w-6 h-6 text-[#D25432]" />;
+    case 'FolderCheck': return <FolderCheck className="w-6 h-6 text-[#2D5A27]" />;
+    case 'Eye': return <Eye className="w-6 h-6 text-[#D25432]" />;
+    case 'FileText': return <FileText className="w-6 h-6 text-[#2D5A27]" />;
+    case 'Sliders': return <Sliders className="w-6 h-6 text-[#D25432]" />;
+    default: return <Layers className="w-6 h-6 text-[#2D5A27]" />;
+  }
+};
+
 export const WhyChoose: React.FC<WhyChooseProps> = ({ onScrollToOffers }) => {
   return (
-    <>
-      {/* "Tu trabajo se vuelve más ligero..." Section */}
-      <section className="py-16 md:py-20 bg-[#FAF7F2] border-b border-[#E8E2D8]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Header */}
-          <div className="text-center space-y-4 mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight font-serif-display">
-              Tu trabajo se vuelve <span className="text-[#D25432] italic">más ligero</span> después de esto...
-            </h2>
+    <section className="py-16 md:py-24 bg-[#FAF7F2] border-b border-[#E8E2D8]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+          <div className="inline-block bg-white text-[#2D5A27] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#E8E2D8]">
+            Beneficios Clave para el Profesional
           </div>
-
-          {/* List of transformations */}
-          <div className="bg-white/60 border border-[#E8E2D8] rounded-3xl p-6 sm:p-10 shadow-xs max-w-3xl mx-auto space-y-5">
-            <div className="flex items-start gap-4 text-base sm:text-lg font-medium text-[#292524]">
-              <span className="text-[#D25432] font-black text-xl shrink-0">→</span>
-              <p>Abrir una carpeta organizada por demanda clínica y saber en 30 segundos exactamente qué aplicar.</p>
-            </div>
-            
-            <div className="flex items-start gap-4 text-base sm:text-lg font-medium text-[#292524]">
-              <span className="text-[#D25432] font-black text-xl shrink-0">→</span>
-              <p>Entregar un material que el adolescente mira y piensa: <em className="text-[#D25432]">"esto de aquí es diferente"</em>.</p>
-            </div>
-
-            <div className="flex items-start gap-4 text-base sm:text-lg font-medium text-[#292524]">
-              <span className="text-[#D25432] font-black text-xl shrink-0">→</span>
-              <p>Verlo hablar libremente por vía indirecta, sin darse cuenta de que se está profundizando en el tema.</p>
-            </div>
-
-            <div className="flex items-start gap-4 text-base sm:text-lg font-medium text-[#292524]">
-              <span className="text-[#D25432] font-black text-xl shrink-0">→</span>
-              <p>Responder con total seguridad cuando los padres preguntan: <em>"¿está funcionando el proceso?"</em>.</p>
-            </div>
-
-            <div className="flex items-start gap-4 text-base sm:text-lg font-medium text-[#292524]">
-              <span className="text-[#D25432] font-black text-xl shrink-0">→</span>
-              <p className="font-bold text-[#1C1917]">Dejar de improvisar en cada consulta. Empezar a aplicar con estructura.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Terracotta Highlight Callout Banner */}
-      <section className="py-16 md:py-20 bg-[#D25432] text-white text-center relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-serif-display leading-tight">
-            Tu paciente adolescente merece recursos hechos exclusivamente para él.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight font-serif-display">
+            ¿Por qué tener un <span className="text-[#D25432] italic">kit de recursos terapéuticos</span>?
           </h2>
-
-          <p className="text-base sm:text-lg text-white/95 leading-relaxed font-medium max-w-2xl mx-auto">
-            No atiendes a un adulto con fichas de niño. Tampoco atiendes a un niño con técnicas teóricas de adulto. El adolescente necesita herramientas pensadas exactamente para su lenguaje y etapa de vida.
+          <p className="text-[#78716C] text-sm sm:text-base font-medium leading-relaxed">
+            Diseñado especialmente para la práctica clínica con adolescentes, optimizando tu preparación previa y enriqueciendo tus sesiones.
           </p>
-
-          <div className="pt-4">
-            <button
-              onClick={onScrollToOffers}
-              className="px-8 py-4 sm:px-10 sm:py-4.5 rounded-full bg-white hover:bg-stone-100 text-[#D25432] font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-2xl transition-all transform hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
-            >
-              <span>Quiero mi kit ahora</span>
-              <ArrowRight className="w-5 h-5 text-[#D25432]" />
-            </button>
-          </div>
-
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-white/85 font-medium">
-            <div className="flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-white" />
-              <span>Acceso inmediato</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-white" />
-              <span>Garantía de 15 días</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <Lock className="w-4 h-4 text-white" />
-              <span>Compra 100% segura</span>
-            </div>
-          </div>
-
         </div>
-      </section>
-    </>
+
+        {/* 6 Benefit Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {WHY_CHOOSE_ITEMS.map((item) => (
+            <div
+              key={item.id}
+              className="p-6 rounded-2xl bg-white border border-[#E8E2D8] hover:border-[#D25432]/40 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8] flex items-center justify-center mb-4 group-hover:bg-[#DCFCE7] transition-colors">
+                  {getBenefitIcon(item.iconName)}
+                </div>
+                <h3 className="text-lg font-bold text-[#1C1917] mb-2 font-serif-display group-hover:text-[#D25432] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-[#78716C] text-xs sm:text-sm leading-relaxed font-medium">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA Banner Callout */}
+        <div className="mt-12 p-8 rounded-3xl bg-[#D25432] text-white text-center max-w-4xl mx-auto shadow-xl space-y-5">
+          <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight font-serif-display leading-tight">
+            Herramientas pensadas exclusivamente para el lenguaje y la etapa adolescente.
+          </h3>
+          <p className="text-sm sm:text-base text-white/90 max-w-2xl mx-auto font-medium">
+            Simplifica tu rutina profesional y ten siempre a la mano el material adecuado para cada demanda en tu consultorio.
+          </p>
+          {onScrollToOffers && (
+            <div className="pt-2">
+              <button
+                onClick={onScrollToOffers}
+                className="px-8 py-3.5 rounded-full bg-white hover:bg-stone-100 text-[#D25432] font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all transform hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
+              >
+                <span>Ver opciones de kit</span>
+                <ArrowRight className="w-4 h-4 text-[#D25432]" />
+              </button>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </section>
   );
 };
+
 

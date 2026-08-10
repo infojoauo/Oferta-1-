@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, ArrowRight, Clock } from 'lucide-react';
+import { Check, ArrowRight, Star } from 'lucide-react';
 import { BASIC_OFFER_URL, COMPLETE_OFFER_URL, IMAGE_ASSETS } from '../config';
 
 interface PricingProps {
@@ -26,31 +26,38 @@ export const Pricing: React.FC<PricingProps> = ({
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A] text-xs font-bold uppercase tracking-wider">
-            <Clock className="w-3.5 h-3.5 text-[#D97706]" />
-            <span>OFERTA VÁLIDA POR TIEMPO LIMITADO</span>
+          <div className="inline-block bg-[#D25432]/10 text-[#D25432] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#D25432]/20">
+            Acceso Inmediato
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight font-serif-display">
-            Elige tu kit
+            Elige el kit que más te conviene
           </h2>
           <p className="text-[#78716C] text-sm sm:text-base font-medium">
-            Ambos kits dan acceso inmediato. La diferencia está en cuánto quieres resolver de una vez.
+            Compara las opciones y selecciona el formato de recursos ideal para tu práctica clínica.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
+        {/* Pricing Cards Grid — Exactly 2 Offers */}
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-4xl mx-auto">
           
           {/* CARD 1: KIT BÁSICO (5 cols) */}
           <div className="lg:col-span-5 rounded-3xl bg-white border border-[#E8E2D8] shadow-sm p-6 sm:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-5 text-center">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#78716C]">
-                KIT BÁSICO
-              </span>
+              <div>
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#78716C]">
+                  OPCIÓN BÁSICA
+                </span>
+                <h3 className="text-2xl font-extrabold text-[#1C1917] font-serif-display mt-1">
+                  KIT BÁSICO
+                </h3>
+                <p className="text-xs font-bold text-[#D25432] uppercase tracking-wider mt-0.5">
+                  50 Recursos Terapéuticos
+                </p>
+              </div>
 
               {/* Mockup */}
-              <div className="w-36 mx-auto aspect-3/4 bg-[#FAF7F2] rounded-xl overflow-hidden p-2 border border-[#E8E2D8]">
+              <div className="w-36 mx-auto aspect-square bg-[#FAF7F2] rounded-xl overflow-hidden p-2 border border-[#E8E2D8]">
                 <img
                   src={IMAGE_ASSETS.BASIC_KIT_MOCKUP}
                   alt="Kit Básico"
@@ -68,7 +75,7 @@ export const Pricing: React.FC<PricingProps> = ({
                   US$5
                 </div>
                 <p className="text-xs text-[#78716C] pt-1 font-medium">
-                  Pago único
+                  Pago único • Formato digital
                 </p>
               </div>
 
@@ -77,52 +84,53 @@ export const Pricing: React.FC<PricingProps> = ({
                 onClick={() => handleCheckout(basicUrl)}
                 className="w-full py-3.5 px-6 rounded-full border-2 border-[#1C1917] font-bold text-[#1C1917] hover:bg-[#FAF7F2] transition-colors text-xs uppercase tracking-wider cursor-pointer"
               >
-                Quiero el Kit Básico
+                QUIERO EL KIT BÁSICO
               </button>
 
               {/* Checklist */}
-              <ul className="text-left space-y-2.5 pt-2 text-xs sm:text-sm text-[#44403C] font-medium border-t border-[#E8E2D8]">
-                <li className="flex items-start gap-2 pt-2">
+              <ul className="text-left space-y-3 pt-3 text-xs sm:text-sm text-[#44403C] font-medium border-t border-[#E8E2D8]">
+                <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-[#2D5A27] shrink-0 mt-0.5" />
-                  <span>50 recursos visuales terapéuticos</span>
+                  <span>50 recursos terapéuticos</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-[#2D5A27] shrink-0 mt-0.5" />
-                  <span>Organizado por demanda clínica</span>
+                  <span>Material digital en PDF</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-[#2D5A27] shrink-0 mt-0.5" />
-                  <span>Acceso inmediato en PDF</span>
+                  <span>Acceso al contenido adquirido</span>
                 </li>
               </ul>
             </div>
-
-            {/* Bottom Upgrade Highlight Box */}
-            <div className="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#E8E2D8] text-center text-xs text-[#78716C]">
-              <p className="font-bold text-[#1C1917]">
-                92% eligen el Completo
-              </p>
-              <p>
-                +80 recursos y 4 bonos exclusivos por solo US$5 más.
-              </p>
-            </div>
           </div>
 
-          {/* CARD 2: KIT COMPLETO (7 cols - Featured Dark Green) */}
-          <div className="lg:col-span-7 rounded-3xl bg-[#2D5A27] text-white shadow-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden space-y-6">
+          {/* CARD 2: KIT COMPLETO (7 cols - Featured Prominent) */}
+          <div className="lg:col-span-7 rounded-3xl bg-[#2D5A27] text-white shadow-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden space-y-6 border-2 border-emerald-400/40">
             
-            {/* Top Badge */}
-            <div className="self-center bg-[#D25432] text-white font-extrabold text-[11px] uppercase tracking-widest px-4 py-1 rounded-full shadow-md">
-              MÁS VENDIDO
+            {/* Top Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <div className="bg-[#D25432] text-white font-extrabold text-[11px] uppercase tracking-widest px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
+                <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
+                <span>⭐ MÁS ELEGIDO</span>
+              </div>
+              <div className="bg-white/10 border border-white/20 text-emerald-100 font-extrabold text-[11px] uppercase tracking-widest px-3.5 py-1 rounded-full">
+                MEJOR RELACIÓN VALOR / PRECIO
+              </div>
             </div>
 
             <div className="space-y-5 text-center">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-200">
-                KIT COMPLETO
-              </span>
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-serif-display">
+                  KIT COMPLETO
+                </h3>
+                <p className="text-xs sm:text-sm font-bold text-amber-300 uppercase tracking-wider mt-0.5">
+                  100+ Recursos + Juegos Terapéuticos
+                </p>
+              </div>
 
               {/* Mockup */}
-              <div className="w-48 mx-auto aspect-16/10 rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20">
+              <div className="w-44 mx-auto aspect-square rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20">
                 <img
                   src={IMAGE_ASSETS.COMPLETE_KIT_MOCKUP}
                   alt="Kit Completo"
@@ -134,60 +142,42 @@ export const Pricing: React.FC<PricingProps> = ({
                 />
               </div>
 
-              <p className="text-xs sm:text-sm text-emerald-100 font-medium">
-                El kit completo para transformar tus sesiones
-              </p>
-
               {/* Price */}
               <div>
-                <div className="text-xs line-through text-emerald-300 font-semibold">
-                  De US$35
-                </div>
                 <div className="text-4xl sm:text-5xl font-black text-white font-serif-display">
                   US$10
                 </div>
                 <p className="text-xs text-emerald-100 pt-1 font-medium">
                   Pago único • Acceso inmediato
                 </p>
-                <div className="text-xs font-bold text-amber-300 pt-1">
-                  Ahorras más del 70% de descuento
-                </div>
               </div>
 
-              {/* Terracotta Button */}
+              {/* Button */}
               <button
                 onClick={() => handleCheckout(completeUrl)}
                 className="w-full py-4 px-6 rounded-full bg-[#D25432] hover:bg-[#b84223] text-white font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-xl transition-all transform hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2"
               >
-                <span>Quiero el Kit Completo</span>
+                <span>QUIERO EL KIT COMPLETO</span>
                 <ArrowRight className="w-5 h-5 text-white" />
               </button>
 
               {/* Checklist */}
-              <ul className="text-left space-y-2.5 pt-3 text-xs sm:text-sm text-white font-medium border-t border-emerald-700/60">
+              <ul className="text-left space-y-3 pt-3 text-xs sm:text-sm text-white font-medium border-t border-emerald-700/60">
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                  <span>+80 recursos visuales terapéuticos</span>
+                  <span>100+ recursos terapéuticos</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                  <span>Organizado por demanda clínica</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                  <span>Acceso inmediato en PDF en tu correo</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                  <span>Acceso vitalicio al material</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                  <span>Garantía incondicional de 15 días</span>
+                  <span>Material digital en PDF</span>
                 </li>
                 <li className="flex items-start gap-2.5 font-bold text-amber-300">
                   <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                  <span>Incluye los 4 Bonos Exclusivos</span>
+                  <span>Bono: Kit de Juegos y Dinámicas Terapéuticas</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
+                  <span>Más variedad de herramientas</span>
                 </li>
               </ul>
             </div>
@@ -200,4 +190,5 @@ export const Pricing: React.FC<PricingProps> = ({
     </section>
   );
 };
+
 

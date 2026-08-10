@@ -12,18 +12,20 @@ import {
 export const BASIC_OFFER_URL = "COLOCAR_LINK_HOTMART_US5_AQUI";
 export const COMPLETE_OFFER_URL = "COLOCAR_LINK_HOTMART_US10_AQUI";
 
+// Configurable Guarantee Days
+export const GUARANTEE_DAYS = 7;
+
 // Image asset paths / placeholders as defined in the system
 export const IMAGE_ASSETS = {
   HERO_MOCKUP: "/src/assets/images/hero_mockup_1786393127242.jpg",
   BASIC_KIT_MOCKUP: "/src/assets/images/basic_kit_mockup_1786393158512.jpg",
   COMPLETE_KIT_MOCKUP: "/src/assets/images/complete_kit_mockup_1786393138892.jpg",
   BONUS_MOCKUP: "/src/assets/images/bonus_mockup_1786393148169.jpg",
-  RESOURCE_IMAGE_01: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
-  RESOURCE_IMAGE_02: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
-  RESOURCE_IMAGE_03: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-  RESOURCE_IMAGE_04: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=800&q=80",
-  RESOURCE_IMAGE_05: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
-  RESOURCE_IMAGE_06: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+  RESOURCE_01: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+  RESOURCE_02: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
+  RESOURCE_03: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+  RESOURCE_04: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=800&q=80",
+  RESOURCE_05: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
 };
 
 export const CATEGORIES: CategoryItem[] = [
@@ -80,11 +82,11 @@ export const CATEGORIES: CategoryItem[] = [
 export const PAIN_POINTS: PainPointItem[] = [
   {
     id: 'p1',
-    quote: '¿Qué actividad puedo utilizar hoy?'
+    quote: '¿Qué actividad puedo utilizar hoy en consulta?'
   },
   {
     id: 'p2',
-    quote: 'El adolescente responde con pocas palabras.'
+    quote: 'El adolescente responde con monosílabos o evasivas.'
   },
   {
     id: 'p3',
@@ -92,7 +94,7 @@ export const PAIN_POINTS: PainPointItem[] = [
   },
   {
     id: 'p4',
-    quote: 'Termino improvisando una actividad.'
+    quote: 'Termino improvisando una actividad sobre la marcha.'
   },
   {
     id: 'p5',
@@ -102,39 +104,39 @@ export const PAIN_POINTS: PainPointItem[] = [
 
 export const WHY_CHOOSE_ITEMS: FeatureBenefitItem[] = [
   {
-    id: 'practico',
-    title: 'Práctico',
-    description: 'Recursos listos para consultar y utilizar.',
-    iconName: 'Zap'
-  },
-  {
-    id: 'variado',
-    title: 'Variado',
-    description: 'Diferentes herramientas y temas para trabajar con adolescentes.',
+    id: 'opciones',
+    title: 'Más opciones para tus sesiones',
+    description: 'Contarás con un abanico amplio de herramientas terapéuticas para abordar diferentes temáticas con flexibilidad.',
     iconName: 'Layers'
   },
   {
-    id: 'visual',
-    title: 'Visual',
-    description: 'Material pensado para facilitar una sesión más dinámica.',
-    iconName: 'Eye'
+    id: 'ahorra-tiempo',
+    title: 'Ahorra tiempo buscando actividades',
+    description: 'Olvídate de pasar horas navegando en internet o preparando fichas desde cero antes de cada consulta.',
+    iconName: 'Zap'
   },
   {
-    id: 'organizado',
-    title: 'Organizado',
-    description: 'Encuentra diferentes tipos de recursos en un solo lugar.',
+    id: 'diferentes-temas',
+    title: 'Trabaja diferentes temas',
+    description: 'Cubre desde ansiedad y pensamientos hasta autoestima, regulación emocional y habilidades sociales.',
     iconName: 'FolderCheck'
   },
   {
-    id: 'digital',
-    title: 'Digital',
-    description: 'Acceso al material en formato digital.',
+    id: 'practico-visual',
+    title: 'Material práctico y visual',
+    description: 'Formatos diseñados con un lenguaje y estética visual que facilitan la conexión directa con el adolescente.',
+    iconName: 'Eye'
+  },
+  {
+    id: 'solo-kit',
+    title: 'Todo en un solo kit',
+    description: 'Un repertorio centralizado y organizado por demandas clínicas para consultar rápidamente cuando lo necesites.',
     iconName: 'FileText'
   },
   {
-    id: 'flexible',
-    title: 'Flexible',
-    description: 'Utilízalo como apoyo según las necesidades de cada sesión.',
+    id: 'digital-facil',
+    title: 'Formato digital y fácil de consultar',
+    description: 'Archivos en PDF de acceso inmediato, listos para imprimir o proyectar en sesiones presenciales u online.',
     iconName: 'Sliders'
   }
 ];
@@ -142,8 +144,8 @@ export const WHY_CHOOSE_ITEMS: FeatureBenefitItem[] = [
 export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
   {
     id: 'sample-1',
-    imageKey: 'RESOURCE_IMAGE_01',
-    title: 'Recurso terapéutico',
+    imageKey: 'RESOURCE_01',
+    title: 'Muestra de Recurso 01',
     category: 'Regulación Emocional',
     description: 'Ficha de exploración visual para identificar la intensidad del malestar emocional y seleccionar estrategias de calma.',
     sampleContent: {
@@ -158,8 +160,8 @@ export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
   },
   {
     id: 'sample-2',
-    imageKey: 'RESOURCE_IMAGE_02',
-    title: 'Actividad de reflexión',
+    imageKey: 'RESOURCE_02',
+    title: 'Muestra de Recurso 02',
     category: 'Pensamientos y Creencias',
     description: 'Plantilla de reestructuración cognitiva para analizar pensamientos automáticos negativos y encontrar alternativas realistas.',
     sampleContent: {
@@ -174,10 +176,10 @@ export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
   },
   {
     id: 'sample-3',
-    imageKey: 'RESOURCE_IMAGE_03',
-    title: 'Trabajo emocional',
+    imageKey: 'RESOURCE_03',
+    title: 'Muestra de Recurso 03',
     category: 'Expresión y Autoempatía',
-    description: 'Mapa del mapa corporal de las emociones para ubicar dónde se sienten el enojo, la tristeza o el miedo.',
+    description: 'Mapa del esquema corporal de las emociones para ubicar dónde se sienten el enojo, la tristeza o el miedo.',
     sampleContent: {
       subtitle: 'Geografía Corporal Emocional',
       instructions: 'Utiliza colores para marcar en el esquema corporal la presión, tensión o temperatura asociada a cada emoción.',
@@ -190,9 +192,9 @@ export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
   },
   {
     id: 'sample-4',
-    imageKey: 'RESOURCE_IMAGE_04',
-    title: 'Autoestima y autoconocimiento',
-    category: 'Fortalezas Personales',
+    imageKey: 'RESOURCE_04',
+    title: 'Muestra de Recurso 04',
+    category: 'Autoestima y Autoconocimiento',
     description: 'Dinámica de rescate de valores, talentos y recursos internos para consolidar el autoconcepto positivo.',
     sampleContent: {
       subtitle: 'El Árbol de Mis Fortalezas',
@@ -206,8 +208,8 @@ export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
   },
   {
     id: 'sample-5',
-    imageKey: 'RESOURCE_IMAGE_05',
-    title: 'Pensamientos y emociones',
+    imageKey: 'RESOURCE_05',
+    title: 'Muestra de Recurso 05',
     category: 'Ansiedad y Expresión',
     description: 'Diario gráfico de desempaque de preocupaciones para diferenciar entre problemas bajo control y situaciones fuera de control.',
     sampleContent: {
@@ -219,45 +221,29 @@ export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
         '¿Cuál es el primer paso concreto que sí puedes dar hoy?'
       ]
     }
-  },
-  {
-    id: 'sample-6',
-    imageKey: 'RESOURCE_IMAGE_06',
-    title: 'Habilidades sociales y expresión',
-    category: 'Comunicación Asertiva',
-    description: 'Tarjetas de entrenamiento en asertividad para practicar la expresión de necesidades y el establecimiento de límites.',
-    sampleContent: {
-      subtitle: 'La Fórmula del Límite Asertivo',
-      instructions: 'Practica la estructura: "Cuando ocurre [hecho], yo me siento [emoción] y necesito [petición clara]".',
-      questions: [
-        '¿En qué situaciones te resulta más difícil decir "no"?',
-        '¿Cómo se escucha una respuesta firme pero respetuosa?',
-        'Ensaya tu respuesta para la próxima interacción exigente.'
-      ]
-    }
   }
 ];
 
 export const TESTIMONIAL_PLACEHOLDERS: TestimonialPlaceholder[] = [
   {
     id: 't1',
-    placeholderText: '[DEPÓSITO REAL DEL CLIENTE 1]',
-    author: 'Nombre del profesional',
-    country: 'País',
+    placeholderText: '[TESTIMONIO REAL 1]',
+    author: 'Psicóloga / Terapeuta',
+    country: 'México',
     rating: 5
   },
   {
     id: 't2',
-    placeholderText: '[DEPÓSITO REAL DEL CLIENTE 2]',
-    author: 'Nombre del profesional',
-    country: 'País',
+    placeholderText: '[TESTIMONIO REAL 2]',
+    author: 'Psicóloga / Terapeuta',
+    country: 'Colombia',
     rating: 5
   },
   {
     id: 't3',
-    placeholderText: '[DEPÓSITO REAL DEL CLIENTE 3]',
-    author: 'Nombre del profesional',
-    country: 'País',
+    placeholderText: '[TESTIMONIO REAL 3]',
+    author: 'Psicólogo / Terapeuta',
+    country: 'Argentina',
     rating: 5
   }
 ];
@@ -277,7 +263,7 @@ export const LATAM_COUNTRIES: CountryFlag[] = [
 export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-1',
-    question: '¿Para quién está diseñado el Kit?',
+    question: '¿Para quién está diseñado este kit?',
     answer: 'Está pensado como material de apoyo para psicólogos, terapeutas y profesionales que trabajan con adolescentes.'
   },
   {
@@ -288,31 +274,22 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-3',
     question: '¿Qué incluye la opción de US$10?',
-    answer: 'La opción completa incluye más de 100 recursos terapéuticos más el Bono de Juegos y Dinámicas Terapéuticas.'
+    answer: 'La opción completa incluye más de 100 recursos terapéuticos y el Bono de Juegos y Dinámicas Terapéuticas.'
   },
   {
     id: 'faq-4',
-    question: '¿Recibiré el material en formato digital?',
-    answer: 'Sí. El material se entrega en formato digital.'
+    question: '¿Recibiré el material en español?',
+    answer: 'Sí. El material de esta oferta está presentado en español.'
   },
   {
     id: 'faq-5',
-    question: '¿Puedo utilizar los recursos durante mis sesiones?',
-    answer: 'Los recursos están pensados como material de apoyo para profesionales durante su trabajo con adolescentes.'
+    question: '¿Cómo recibiré mi compra?',
+    answer: 'Después de completar la compra, recibirás acceso al contenido correspondiente a la oferta adquirida.'
   },
   {
     id: 'faq-6',
-    question: '¿El material está en español?',
-    answer: 'Sí, la oferta está presentada en español para profesionales de habla hispana.'
-  },
-  {
-    id: 'faq-7',
-    question: '¿Cómo recibiré mi compra?',
-    answer: 'Después de completar la compra, recibirás acceso al contenido según la oferta adquirida.'
-  },
-  {
-    id: 'faq-8',
-    question: '¿Necesito conocimientos técnicos para utilizar el material?',
-    answer: 'No. El objetivo del kit es ofrecer recursos prácticos y fáciles de consultar.'
+    question: '¿Puedo imprimir los recursos?',
+    answer: 'Los materiales se entregan en formato digital y pueden utilizarse de acuerdo con las condiciones de uso del material.'
   }
 ];
+
