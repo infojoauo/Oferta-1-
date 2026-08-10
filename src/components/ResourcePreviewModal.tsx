@@ -82,7 +82,7 @@ export const ResourcePreviewModal: React.FC<ResourcePreviewModalProps> = ({
                 {selectedSample.sampleContent?.subtitle || selectedSample.title}
               </h4>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 "{selectedSample.sampleContent?.instructions || selectedSample.description}"
               </p>
             </div>

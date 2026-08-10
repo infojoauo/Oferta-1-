@@ -3,24 +3,38 @@ import {
   PainPointItem,
   FeatureBenefitItem,
   ResourceSampleItem,
+  TestimonialItem,
   TestimonialPlaceholder,
   CountryFlag,
   FAQItem
 } from './types';
 
-// Hotmart Offer Links (Variables requested explicitly in prompt)
-export const BASIC_OFFER_URL = "COLOCAR_LINK_HOTMART_US5_AQUI";
-export const COMPLETE_OFFER_URL = "COLOCAR_LINK_HOTMART_US10_AQUI";
+// Hotmart Offer Links
+export const BASIC_OFFER_URL = "https://pay.hotmart.com/M107100558A?off=oosp26rd";
+export const COMPLETE_OFFER_URL = "https://pay.hotmart.com/M107100558A?off=wno8js5z";
 
 // Configurable Guarantee Days
 export const GUARANTEE_DAYS = 7;
 
 // Image asset paths / placeholders as defined in the system
 export const IMAGE_ASSETS = {
-  HERO_MOCKUP: "/src/assets/images/hero_mockup_1786393127242.jpg",
+  HERO_MOCKUP: "/src/assets/images/hero_kit_mockup_1786398958511.jpg",
   BASIC_KIT_MOCKUP: "/src/assets/images/basic_kit_mockup_1786393158512.jpg",
   COMPLETE_KIT_MOCKUP: "/src/assets/images/complete_kit_mockup_1786393138892.jpg",
-  BONUS_MOCKUP: "/src/assets/images/bonus_mockup_1786393148169.jpg",
+  BONUS_MOCKUP: "/src/assets/images/bonus_kit_mockup_v2_1786400918208.jpg",
+  BENEFIT_MORE_OPTIONS: "/src/assets/images/benefit_more_options_1786399893133.jpg",
+  BENEFIT_SAVE_TIME: "/src/assets/images/benefit_save_time_1786399903023.jpg",
+  BENEFIT_DIVERSE_TOPICS: "/src/assets/images/benefit_diverse_topics_1786399911530.jpg",
+  BENEFIT_PRACTICAL_VISUAL: "/src/assets/images/benefit_practical_visual_1786399920871.jpg",
+  SAMPLE_EMOTION_REGULATION: "/src/assets/images/sample_emotion_regulation_1786400334789.jpg",
+  SAMPLE_COGNITIVE_DISTORTIONS: "/src/assets/images/sample_cognitive_distortions_1786400353513.jpg",
+  SAMPLE_ANXIETY_TRACKER: "/src/assets/images/sample_anxiety_tracker_1786400373005.jpg",
+  SAMPLE_SELF_ESTEEM_TREE: "/src/assets/images/sample_self_esteem_tree_1786400385822.jpg",
+  SAMPLE_ASSERTIVE_COMMUNICATION: "/src/assets/images/sample_assertive_communication_1786400398050.jpg",
+  AVATAR_CARLOS_MENDEZ: "/src/assets/images/avatar_carlos_mendez_1786401496469.jpg",
+  AVATAR_JUAN_PEREZ: "/src/assets/images/avatar_juan_perez_1786401514679.jpg",
+  AVATAR_SOFIA_ALARCON: "/src/assets/images/avatar_sofia_alarcon_1786401531634.jpg",
+  AVATAR_ROBERTO_GOMEZ: "/src/assets/images/avatar_roberto_gomez_1786401549476.jpg",
   RESOURCE_01: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
   RESOURCE_02: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
   RESOURCE_03: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
@@ -107,25 +121,29 @@ export const WHY_CHOOSE_ITEMS: FeatureBenefitItem[] = [
     id: 'opciones',
     title: 'Más opciones para tus sesiones',
     description: 'Contarás con un abanico amplio de herramientas terapéuticas para abordar diferentes temáticas con flexibilidad.',
-    iconName: 'Layers'
+    iconName: 'Layers',
+    imageUrl: IMAGE_ASSETS.BENEFIT_MORE_OPTIONS
   },
   {
     id: 'ahorra-tiempo',
     title: 'Ahorra tiempo buscando actividades',
     description: 'Olvídate de pasar horas navegando en internet o preparando fichas desde cero antes de cada consulta.',
-    iconName: 'Zap'
+    iconName: 'Zap',
+    imageUrl: IMAGE_ASSETS.BENEFIT_SAVE_TIME
   },
   {
     id: 'diferentes-temas',
     title: 'Trabaja diferentes temas',
     description: 'Cubre desde ansiedad y pensamientos hasta autoestima, regulación emocional y habilidades sociales.',
-    iconName: 'FolderCheck'
+    iconName: 'FolderCheck',
+    imageUrl: IMAGE_ASSETS.BENEFIT_DIVERSE_TOPICS
   },
   {
     id: 'practico-visual',
     title: 'Material práctico y visual',
     description: 'Formatos diseñados con un lenguaje y estética visual que facilitan la conexión directa con el adolescente.',
-    iconName: 'Eye'
+    iconName: 'Eye',
+    imageUrl: IMAGE_ASSETS.BENEFIT_PRACTICAL_VISUAL
   },
   {
     id: 'solo-kit',
@@ -144,83 +162,130 @@ export const WHY_CHOOSE_ITEMS: FeatureBenefitItem[] = [
 export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
   {
     id: 'sample-1',
-    imageKey: 'RESOURCE_01',
-    title: 'Muestra de Recurso 01',
+    imageKey: IMAGE_ASSETS.SAMPLE_EMOTION_REGULATION,
+    title: 'Ficha de Regulación Emocional',
     category: 'Regulación Emocional',
-    description: 'Ficha de exploración visual para identificar la intensidad del malestar emocional y seleccionar estrategias de calma.',
+    description: 'Recurso psicoterapéutico diseñado para guiar al adolescente a identificar la intensidad de sus estados emocionales y aplicar técnicas de autorregulación consciente.',
     sampleContent: {
-      subtitle: 'Semáforo de la Regulación Emocional',
-      instructions: 'Guía al adolescente a ubicar su estado actual (Rojo - Carga alta, Amarillo - Alerta, Verde - Calma) y elegir una técnica de autorregulación.',
+      subtitle: 'Exploración y Calma Emocional',
+      instructions: 'Acompaña al adolescente a evaluar su estado físico y emocional para activar herramientas de calma.',
       questions: [
-        '¿En qué nivel del semáforo sientes tu cuerpo ahora mismo?',
-        '¿Qué señal física te avisa que estás pasando de amarillo a rojo?',
-        'Selecciona 2 estrategias de tu lista de calma para probar hoy.'
+        '¿Cómo describirías la emoción que estás experimentando en este momento?',
+        '¿En qué nivel de intensidad te encuentras del 1 al 10?',
+        '¿Qué herramienta de autorregulación te gustaría aplicar hoy?'
       ]
     }
   },
   {
     id: 'sample-2',
-    imageKey: 'RESOURCE_02',
-    title: 'Muestra de Recurso 02',
-    category: 'Pensamientos y Creencias',
-    description: 'Plantilla de reestructuración cognitiva para analizar pensamientos automáticos negativos y encontrar alternativas realistas.',
+    imageKey: IMAGE_ASSETS.SAMPLE_COGNITIVE_DISTORTIONS,
+    title: 'Identificación de Pensamientos Distorsionados',
+    category: 'Reestructuración Cognitiva',
+    description: 'Guía visual y práctica para detectar trampas del pensamiento, cuestionar interpretaciones automáticas y construir respuestas racionales y compasivas.',
     sampleContent: {
-      subtitle: 'El Detective de Pensamientos',
-      instructions: 'Analiza el pensamiento recurrente como si fueras un detective buscando evidencia real a favor y en contra.',
+      subtitle: 'Detective de Pensamientos Automáticos',
+      instructions: 'Analiza situaciones desencadenantes y evalúa las evidencias a favor y en contra de cada pensamiento.',
       questions: [
-        '¿Cuál es la situación que desencadenó esta preocupación?',
-        '¿Qué evidencia objetiva apoya este pensamiento?',
-        'Si un amigo querido estuviera en tu lugar, ¿qué le dirías?'
+        '¿Qué pensamiento vino a tu mente inmediatamente?',
+        '¿Qué evidencias reales confirman o contradicen este pensamiento?',
+        '¿Existe una forma alternativa y más equilibrada de ver esta situación?'
       ]
     }
   },
   {
     id: 'sample-3',
-    imageKey: 'RESOURCE_03',
-    title: 'Muestra de Recurso 03',
-    category: 'Expresión y Autoempatía',
-    description: 'Mapa del esquema corporal de las emociones para ubicar dónde se sienten el enojo, la tristeza o el miedo.',
+    imageKey: IMAGE_ASSETS.SAMPLE_ANXIETY_TRACKER,
+    title: 'Mapa Terapéutico de la Ansiedad',
+    category: 'Manejo de Ansiedad',
+    description: 'Plantilla de registro visual que facilita mapear los detonantes de la ansiedad, sensaciones corporales y planificar acciones de afrontamiento gradual.',
     sampleContent: {
-      subtitle: 'Geografía Corporal Emocional',
-      instructions: 'Utiliza colores para marcar en el esquema corporal la presión, tensión o temperatura asociada a cada emoción.',
+      subtitle: 'Mapeo y Afrontamiento Gradual',
+      instructions: 'Identifica la curva de ansiedad y establece acciones concretas de anclaje al presente.',
       questions: [
-        '¿Qué color representa mejor la emoción dominante hoy?',
-        '¿En qué parte de tu cuerpo se siente más pesada o intensa?',
-        '¿Qué necesita esa parte de tu cuerpo para soltar la tensión?'
+        '¿Qué situaciones suelen detonar tu curva de ansiedad?',
+        '¿Qué señales físicas en tu cuerpo indican un aumento de tensión?',
+        '¿Qué ejercicio de anclaje sensorial o respiración te da mayor alivio?'
       ]
     }
   },
   {
     id: 'sample-4',
-    imageKey: 'RESOURCE_04',
-    title: 'Muestra de Recurso 04',
-    category: 'Autoestima y Autoconocimiento',
-    description: 'Dinámica de rescate de valores, talentos y recursos internos para consolidar el autoconcepto positivo.',
+    imageKey: IMAGE_ASSETS.SAMPLE_SELF_ESTEEM_TREE,
+    title: 'Mi Árbol de Fortalezas y Autoconcepto',
+    category: 'Autoestima y Fortalezas',
+    description: 'Dinámica creativa e interactiva para conectar con el propio valor, rescatar habilidades personales y fortalecer la confianza en la etapa adolescente.',
     sampleContent: {
-      subtitle: 'El Árbol de Mis Fortalezas',
-      instructions: 'Escribe en las raíces tus valores, en el tronco tus habilidades demostradas y en los frutos tus logros recientes.',
+      subtitle: 'Consolidación del Autoconcepto',
+      instructions: 'Explora raíces (valores), tronco (habilidades) y ramas (logros) para construir una visión integrada de sí mismo.',
       questions: [
-        '¿Qué cualidad tuya te ha ayudado a superar un momento difícil?',
-        '¿Qué elogio genuino te ha costado trabajo aceptar pero es verdadero?',
-        '¿Qué nueva habilidad te gustaría cultivar esta semana?'
+        '¿Cuáles son tus 3 valores más importantes como persona?',
+        '¿Qué fortaleza te ha ayudado a atravesar desafíos pasados?',
+        '¿De qué aspecto de ti mismo te sientes más orgulloso actualmente?'
       ]
     }
   },
   {
     id: 'sample-5',
-    imageKey: 'RESOURCE_05',
-    title: 'Muestra de Recurso 05',
-    category: 'Ansiedad y Expresión',
-    description: 'Diario gráfico de desempaque de preocupaciones para diferenciar entre problemas bajo control y situaciones fuera de control.',
+    imageKey: IMAGE_ASSETS.SAMPLE_ASSERTIVE_COMMUNICATION,
+    title: 'Comunicación Asertiva y Vínculos',
+    category: 'Habilidades Sociales',
+    description: 'Tarjetas de diálogo y ejercicios de roles para entrenar la expresión de límites, comunicación clara y resolución pacífica de conflictos con pares y familia.',
     sampleContent: {
-      subtitle: 'Círculo de Control vs. Círculo de Preocupación',
-      instructions: 'Clasifica las situaciones en el círculo interno (lo que yo controlo) o externo (lo que no depende de mí).',
+      subtitle: 'Entrenamiento en Asertividad',
+      instructions: 'Ensaya situaciones sociales cotidianas diferenciando entre respuestas pasivas, agresivas y asertivas.',
       questions: [
-        'De todo lo que te preocupa, ¿qué porcentaje depende 100% de tus acciones?',
-        '¿Cómo podemos soltar la energía gastada en lo que no puedes controlar?',
-        '¿Cuál es el primer paso concreto que sí puedes dar hoy?'
+        '¿Cómo puedes comunicar tu necesidad de forma clara y respetuosa?',
+        '¿Qué límite personal necesitas marcar en esta situación?',
+        '¿Qué palabras te permiten expresar lo que sientes sin agredir?'
       ]
     }
+  }
+];
+
+export const REAL_TESTIMONIALS: TestimonialItem[] = [
+  {
+    id: 't1',
+    initials: 'CM',
+    name: 'Carlos Méndez',
+    role: 'Psicólogo Infanto-Juvenil',
+    avatarUrl: IMAGE_ASSETS.AVATAR_CARLOS_MENDEZ,
+    quote: 'Este material cambió totalmente la forma en que planifico mis sesiones. Ahora ahorro tiempo en la preparación previa y los adolescentes se conectan mucho más rápido con las actividades visuales.',
+    country: 'México',
+    flag: '🇲🇽',
+    rating: 5
+  },
+  {
+    id: 't2',
+    initials: 'JP',
+    name: 'Juan Pérez',
+    role: 'Terapeuta Cognitivo Conductual',
+    avatarUrl: IMAGE_ASSETS.AVATAR_JUAN_PEREZ,
+    quote: 'Las herramientas están excelentemente organizadas y listas para aplicar en consulta. Lo recomiendo totalmente a cualquier profesional que trabaje con jóvenes y adolescentes.',
+    country: 'Colombia',
+    flag: '🇨🇴',
+    rating: 5
+  },
+  {
+    id: 't3',
+    initials: 'SA',
+    name: 'Sofía Alarcón',
+    role: 'Psicopedagoga Clínica',
+    avatarUrl: IMAGE_ASSETS.AVATAR_SOFIA_ALARCON,
+    quote: 'Buscaba recursos con un diseño moderno y cercano a la etapa adolescente. La respuesta de mis pacientes a las fichas de autoestima y regulación emocional ha sido increíble.',
+    country: 'Chile',
+    flag: '🇨🇱',
+    rating: 5
+  },
+  {
+    id: 't4',
+    initials: 'RG',
+    name: 'Roberto Gómez',
+    role: 'Orientador Escolar y Familiar',
+    avatarUrl: IMAGE_ASSETS.AVATAR_ROBERTO_GOMEZ,
+    quote: 'Los juegos y dinámicas del bono me han ayudado muchísimo a romper el hielo en las primeras sesiones. Ha sido una de las mejores inversiones para mi consultorio.',
+    country: 'Argentina',
+    flag: '🇦🇷',
+    rating: 5
   }
 ];
 

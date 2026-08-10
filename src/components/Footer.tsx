@@ -6,43 +6,43 @@ export const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-xs sm:text-sm">
+      <footer className="bg-[#FAF7F2] text-[#78716C] py-12 border-t border-[#E8E2D8] text-xs sm:text-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center">
           
           <div className="space-y-1">
-            <p className="font-bold text-slate-200 text-base">
+            <p className="font-bold text-[#1C1917] text-base font-serif-display">
               Kit Terapéutico para Adolescentes © 2026
             </p>
-            <p className="text-slate-500 font-medium">
+            <p className="text-[#78716C] font-medium">
               Material digital para profesionales.
             </p>
           </div>
 
           {/* Links */}
-          <div className="flex flex-wrap justify-center gap-6 font-semibold text-slate-400">
+          <div className="flex flex-wrap justify-center gap-6 font-semibold text-[#57534E]">
             <button
               onClick={() => setActiveModal('privacy')}
-              className="hover:text-emerald-400 transition-colors cursor-pointer"
+              className="hover:text-[#2D5A27] transition-colors cursor-pointer"
             >
               Política de Privacidad
             </button>
-            <span className="text-slate-800">•</span>
+            <span className="text-[#E8E2D8]">•</span>
             <button
               onClick={() => setActiveModal('terms')}
-              className="hover:text-emerald-400 transition-colors cursor-pointer"
+              className="hover:text-[#2D5A27] transition-colors cursor-pointer"
             >
               Términos
             </button>
-            <span className="text-slate-800">•</span>
+            <span className="text-[#E8E2D8]">•</span>
             <button
               onClick={() => setActiveModal('contact')}
-              className="hover:text-emerald-400 transition-colors cursor-pointer"
+              className="hover:text-[#2D5A27] transition-colors cursor-pointer"
             >
               Contacto
             </button>
           </div>
 
-          <div className="pt-4 border-t border-slate-900/80 text-[11px] text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <div className="pt-4 border-t border-[#E8E2D8]/60 text-[11px] text-[#A8A29E] max-w-2xl mx-auto leading-relaxed">
             Este sitio web no forma parte de Meta, Facebook ni de ninguna entidad de Meta Inc. Los materiales ofrecidos son herramientas de apoyo psicoeducativo e intervención profesional para psicólogos, terapeutas y educadores.
           </div>
 

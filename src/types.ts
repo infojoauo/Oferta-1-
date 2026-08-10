@@ -15,6 +15,7 @@ export interface FeatureBenefitItem {
   title: string;
   description: string;
   iconName: string;
+  imageUrl?: string;
 }
 
 export interface ResourceSampleItem {
@@ -28,6 +29,18 @@ export interface ResourceSampleItem {
     instructions: string;
     questions: string[];
   };
+}
+
+export interface TestimonialItem {
+  id: string;
+  initials: string;
+  name: string;
+  role: string;
+  avatarUrl?: string;
+  quote: string;
+  country: string;
+  flag: string;
+  rating: number;
 }
 
 export interface TestimonialPlaceholder {

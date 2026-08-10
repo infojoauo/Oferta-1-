@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import { BASIC_OFFER_URL, COMPLETE_OFFER_URL, IMAGE_ASSETS } from '../config';
 
@@ -11,6 +11,23 @@ export const Pricing: React.FC<PricingProps> = ({
   basicUrl = BASIC_OFFER_URL,
   completeUrl = COMPLETE_OFFER_URL
 }) => {
+  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 14, seconds: 52 });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 };
+        } else if (prev.minutes > 0) {
+          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        } else if (prev.hours > 0) {
+          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        }
+        return { hours: 0, minutes: 15, seconds: 0 };
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleCheckout = (url: string) => {
     if (url && url !== "COLOCAR_LINK_HOTMART_US5_AQUI" && url !== "COLOCAR_LINK_HOTMART_US10_AQUI") {
@@ -24,22 +41,72 @@ export const Pricing: React.FC<PricingProps> = ({
     <section id="ofertas" className="py-16 md:py-24 bg-[#FAF7F2] border-b border-[#E8E2D8]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-block bg-[#D25432]/10 text-[#D25432] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#D25432]/20">
-            Acceso Inmediato
+        {/* Timer & Section Header */}
+        <div className="text-center max-w-2xl mx-auto space-y-6">
+          
+          {/* Countdown Timer Block */}
+          <div className="inline-flex flex-col items-center space-y-3">
+            {/* Top Orange Badge */}
+            <div className="px-5 py-1.5 rounded-full bg-[#D25432] text-white text-xs font-black uppercase tracking-wider shadow-md">
+              OFERTA LIMITADA — TERMINA EN
+            </div>
+
+            {/* Countdown Digits */}
+            <div className="flex items-center justify-center gap-2 sm:gap-3 pt-1">
+              {/* Hours */}
+              <div className="flex flex-col items-center">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-[#1C1917] text-white flex items-center justify-center text-xl sm:text-3xl font-black shadow-md border border-[#2B2725]">
+                  {String(timeLeft.hours).padStart(2, '0')}
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#78716C] uppercase tracking-wider mt-1.5">
+                  HORAS
+                </span>
+              </div>
+
+              <span className="text-lg sm:text-2xl font-bold text-[#1C1917] pb-5">:</span>
+
+              {/* Minutes */}
+              <div className="flex flex-col items-center">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-[#1C1917] text-white flex items-center justify-center text-xl sm:text-3xl font-black shadow-md border border-[#2B2725]">
+                  {String(timeLeft.minutes).padStart(2, '0')}
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#78716C] uppercase tracking-wider mt-1.5">
+                  MINUTOS
+                </span>
+              </div>
+
+              <span className="text-lg sm:text-2xl font-bold text-[#1C1917] pb-5">:</span>
+
+              {/* Seconds */}
+              <div className="flex flex-col items-center">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-[#1C1917] text-white flex items-center justify-center text-xl sm:text-3xl font-black shadow-md border border-[#2B2725]">
+                  {String(timeLeft.seconds).padStart(2, '0')}
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#78716C] uppercase tracking-wider mt-1.5">
+                  SEGUNDOS
+                </span>
+              </div>
+            </div>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight font-serif-display">
-            Elige el kit que más te conviene
-          </h2>
-          <p className="text-[#78716C] text-sm sm:text-base font-medium">
-            Compara las opciones y selecciona el formato de recursos ideal para tu práctica clínica.
-          </p>
+          {/* Sub-badge & Title */}
+          <div className="space-y-2 pt-1">
+            <div className="inline-block bg-[#DCFCE7] text-[#166534] px-4 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider border border-[#2D5A27]/20 shadow-2xs">
+              INVIERTE EN TU EQUIPO
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight font-serif-display">
+              Elige Tu Oferta
+            </h2>
+            <p className="text-[#78716C] text-sm sm:text-base font-medium max-w-lg mx-auto">
+              Compara las opciones y selecciona el formato de recursos ideal para tu práctica clínica.
+            </p>
+          </div>
+
         </div>
 
         {/* Pricing Cards Grid — Exactly 2 Offers */}
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-4xl mx-auto">
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-4xl mx-auto">
           
           {/* CARD 1: KIT BÁSICO (5 cols) */}
           <div className="lg:col-span-5 rounded-3xl bg-white border border-[#E8E2D8] shadow-sm p-6 sm:p-8 flex flex-col justify-between space-y-6">
@@ -82,9 +149,9 @@ export const Pricing: React.FC<PricingProps> = ({
               {/* Button */}
               <button
                 onClick={() => handleCheckout(basicUrl)}
-                className="w-full py-3.5 px-6 rounded-full border-2 border-[#1C1917] font-bold text-[#1C1917] hover:bg-[#FAF7F2] transition-colors text-xs uppercase tracking-wider cursor-pointer"
+                className="w-full py-3.5 px-4 rounded-full border-2 border-[#1C1917] font-bold text-[#1C1917] hover:bg-[#FAF7F2] transition-colors text-xs uppercase tracking-wider cursor-pointer flex items-center justify-center"
               >
-                QUIERO EL KIT BÁSICO
+                <span className="whitespace-nowrap">QUIERO EL KIT BÁSICO</span>
               </button>
 
               {/* Checklist */}
@@ -155,10 +222,10 @@ export const Pricing: React.FC<PricingProps> = ({
               {/* Button */}
               <button
                 onClick={() => handleCheckout(completeUrl)}
-                className="w-full py-4 px-6 rounded-full bg-[#D25432] hover:bg-[#b84223] text-white font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-xl transition-all transform hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-4 px-3 sm:px-6 rounded-full bg-[#D25432] hover:bg-[#b84223] text-white font-extrabold text-xs sm:text-base uppercase tracking-wider shadow-xl transition-all transform hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2"
               >
-                <span>QUIERO EL KIT COMPLETO</span>
-                <ArrowRight className="w-5 h-5 text-white" />
+                <span className="whitespace-nowrap">QUIERO EL KIT COMPLETO</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
               </button>
 
               {/* Checklist */}

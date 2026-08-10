@@ -1,50 +1,74 @@
 import React from 'react';
-import { Lock, Zap, FileText, ShieldCheck } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ShieldCheck, CheckCircle2, Lock, Zap } from 'lucide-react';
 
 export const Guarantee: React.FC = () => {
   return (
-    <section className="py-16 md:py-20 bg-[#FAF7F2] border-b border-[#E8E2D8]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-[#FAF7F2] border-b border-[#E8E2D8] overflow-hidden">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-3xl bg-white border border-[#E8E2D8] p-8 sm:p-12 text-center space-y-6 shadow-sm relative overflow-hidden">
-          
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-[#DCFCE7] text-[#2D5A27] flex items-center justify-center shadow-xs">
-            <ShieldCheck className="w-9 h-9" />
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.97, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-3xl bg-white border border-[#E8E2D8] p-8 sm:p-12 text-center shadow-lg relative overflow-hidden"
+        >
+          {/* Top-Right Pill Badge */}
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 px-3.5 py-1 rounded-full bg-[#166534] text-white text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-xs">
+            100% SEGURO
           </div>
 
-          <div className="space-y-2 max-w-xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1C1917] tracking-tight font-serif-display">
-              Prueba el material durante <span className="text-[#D25432] italic">15 días sin riesgo</span>
-            </h2>
-            <p className="text-[#78716C] text-sm sm:text-base leading-relaxed font-medium">
-              Tu compra se procesa de forma 100% segura a través de <strong className="text-[#1C1917]">Hotmart</strong>. Si por cualquier motivo sientes que el kit no transformó tus consultas con adolescentes, te devolvemos el 100% de tu dinero de inmediato.
-            </p>
+          {/* Central Circular Gradient Shield Icon */}
+          <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full bg-gradient-to-br from-[#2D5A27] via-[#4A7C2A] to-[#B08920] flex items-center justify-center shadow-md mb-6 mt-2">
+            <ShieldCheck className="w-10 h-10 sm:w-12 sm:h-12 text-white stroke-[2.2]" />
           </div>
 
-          <div className="inline-block px-6 py-2.5 rounded-full bg-[#FAF7F2] border border-[#2D5A27]/30 text-[#2D5A27] font-extrabold text-xs uppercase tracking-wider shadow-2xs">
-            🛡️ Garantía Incondicional de 15 Días
-          </div>
+          {/* Title */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1C1917] tracking-tight font-serif-display leading-tight mb-4">
+            Garantía Incondicional <br className="hidden sm:inline" />
+            de 7 Días
+          </h2>
 
-          {/* Three Trust Badges */}
-          <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E8E2D8] flex items-center justify-center gap-2.5 text-[#1C1917] font-bold text-xs sm:text-sm">
-              <Lock className="w-4 h-4 text-[#2D5A27]" />
-              <span>Compra 100% Segura</span>
+          {/* Main Description */}
+          <p className="text-[#57534E] text-sm sm:text-base leading-relaxed font-medium max-w-md mx-auto mb-6">
+            Prueba el material por 7 días completos. Si no quedas 100% satisfecho, te devolvemos tu dinero sin preguntas ni complicaciones.
+          </p>
+
+          {/* Bullet List with Checkmarks */}
+          <div className="inline-flex flex-col items-start gap-2.5 text-xs sm:text-sm font-bold text-[#44403C] text-left mx-auto mb-6 bg-[#FAF7F2] p-4 sm:p-5 rounded-2xl border border-[#E8E2D8]/80 w-full sm:w-auto">
+            <div className="flex items-center gap-2.5">
+              <CheckCircle2 className="w-4.5 h-4.5 text-[#2D5A27] shrink-0" />
+              <span>Devolución rápida y sin burocracia</span>
             </div>
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E8E2D8] flex items-center justify-center gap-2.5 text-[#1C1917] font-bold text-xs sm:text-sm">
-              <Zap className="w-4 h-4 text-[#D25432]" />
-              <span>Acceso Inmediato por Email</span>
+            <div className="flex items-center gap-2.5">
+              <CheckCircle2 className="w-4.5 h-4.5 text-[#2D5A27] shrink-0" />
+              <span>Sin preguntas ni justificaciones</span>
             </div>
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E8E2D8] flex items-center justify-center gap-2.5 text-[#1C1917] font-bold text-xs sm:text-sm">
-              <FileText className="w-4 h-4 text-[#2D5A27]" />
-              <span>PDFs Listos para Imprimir</span>
+            <div className="flex items-center gap-2.5">
+              <CheckCircle2 className="w-4.5 h-4.5 text-[#2D5A27] shrink-0" />
+              <span>Tu satisfacción es nuestra prioridad</span>
             </div>
           </div>
 
-        </div>
+          {/* Hotmart & Security Footer */}
+          <div className="pt-5 border-t border-[#F5EFE6] flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#78716C] font-semibold">
+            <span className="flex items-center gap-1.5">
+              <Lock className="w-3.5 h-3.5 text-[#2D5A27]" />
+              Garantizado por Hotmart
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Zap className="w-3.5 h-3.5 text-[#D25432]" />
+              Acceso Inmediato
+            </span>
+          </div>
+
+        </motion.div>
 
       </div>
     </section>
   );
 };
+
+
 

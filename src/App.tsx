@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { Categories } from './components/Categories';
 import { PainPoints } from './components/PainPoints';
 import { WhyChoose } from './components/WhyChoose';
-import { ResourceCarousel } from './components/ResourceCarousel';
 import { BonusSection } from './components/BonusSection';
 import { SocialProof } from './components/SocialProof';
 import { Pricing } from './components/Pricing';
@@ -14,7 +13,6 @@ import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { ResourcePreviewModal } from './components/ResourcePreviewModal';
 import { HotmartConfigModal } from './components/HotmartConfigModal';
-import { StickyMobileCTA } from './components/StickyMobileCTA';
 import { BASIC_OFFER_URL, COMPLETE_OFFER_URL } from './config';
 import { ResourceSampleItem } from './types';
 
@@ -63,25 +61,19 @@ export default function App() {
       {/* 4ª SEÇÃO — POR QUÉ ELEGIR ESTE KIT */}
       <WhyChoose onScrollToOffers={scrollToOffers} />
 
-      {/* 5ª SEÇÃO — VEJA O MATERIAL POR DENTRO (CARROSSEL) */}
-      <ResourceCarousel
-        onScrollToOffers={scrollToOffers}
-        onOpenPreviewModal={openPreviewWithSample}
-      />
-
-      {/* 6ª SEÇÃO — BÔNUS */}
+      {/* 5ª SEÇÃO — BÔNUS */}
       <BonusSection
         onScrollToOffers={scrollToOffers}
       />
 
-      {/* 7ª SEÇÃO — PROVA SOCIAL */}
-      <SocialProof />
-
-      {/* 8ª SEÇÃO — ESCOLHA SEU KIT (OFERTAS) */}
+      {/* 7ª SEÇÃO — ESCOLHA SEU KIT (OFERTAS) */}
       <Pricing
         basicUrl={basicUrl}
         completeUrl={completeUrl}
       />
+
+      {/* 8ª SEÇÃO — PROVA SOCIAL (DEPOIMENTOS) */}
+      <SocialProof />
 
       {/* 9ª SEÇÃO — GARANTIA */}
       <Guarantee />
@@ -97,11 +89,6 @@ export default function App() {
 
       {/* 12ª SEÇÃO — RODAPÉ */}
       <Footer />
-
-      {/* Floating Mobile Sticky CTA Bar */}
-      <StickyMobileCTA
-        onScrollToOffers={scrollToOffers}
-      />
 
       {/* Interactive PDF Worksheet Sample Modal */}
       {isPreviewModalOpen && (

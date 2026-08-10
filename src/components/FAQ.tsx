@@ -21,7 +21,7 @@ export const FAQ: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1C1917] tracking-tight font-serif-display">
-            Preguntas <span className="text-[#D25432] italic">frecuentes</span>
+            Preguntas <span className="text-[#D25432]">frecuentes</span>
           </h2>
           <p className="text-[#78716C] text-sm sm:text-base font-medium">
             Aquí encuentras la respuesta a las dudas más comunes sobre el kit y el formato de acceso.
