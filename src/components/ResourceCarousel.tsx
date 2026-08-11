@@ -102,17 +102,21 @@ export const ResourceCarousel: React.FC<ResourceCarouselProps> = ({
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className="snap-center shrink-0 w-[280px] sm:w-[320px] md:w-[350px] rounded-2xl border border-[#E8E2D8] bg-white shadow-xs hover:shadow-xl hover:border-[#D25432] transition-all duration-300 overflow-hidden flex flex-col justify-between group"
               >
-                {/* Image Container (Pure Image without 'ver muestra' button) */}
+                {/* Image Container */}
                 <div className="relative aspect-4/3 bg-[#FAF7F2] overflow-hidden border-b border-[#F5EFE6]">
-                  <img
-                    src={sample.imageKey}
-                    alt={sample.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80";
-                    }}
-                  />
+                  {sample.imageKey ? (
+                    <img
+                      src={sample.imageKey}
+                      alt={sample.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center text-center p-4 text-stone-400 bg-stone-100 border border-dashed border-stone-300">
+                      <span className="text-xs font-bold text-stone-500">{sample.title}</span>
+                      <span className="text-[10px]">Bloque de muestra</span>
+                    </div>
+                  )}
                   <div className="absolute top-3 left-3 bg-[#1C1917]/85 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs">
                     {sample.category}
                   </div>

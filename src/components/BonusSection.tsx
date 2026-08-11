@@ -81,16 +81,20 @@ export const BonusSection: React.FC<BonusSectionProps> = ({ onScrollToOffers }) 
             
             {/* Mockup Image - Borderless & Centered */}
             <div className="md:col-span-5 flex justify-center items-center">
-              <div className="relative w-full max-w-xs aspect-square rounded-2xl overflow-hidden flex items-center justify-center">
-                <img
-                  src={IMAGE_ASSETS.BONUS_MOCKUP}
-                  alt="Kit de Juegos y Dinámicas Terapéuticas"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover rounded-2xl shadow-md hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80";
-                  }}
-                />
+              <div className="relative w-full max-w-xs aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-[#FAF7F2] border border-[#E8E2D8]">
+                {IMAGE_ASSETS.BONUS_MOCKUP ? (
+                  <img
+                    src={IMAGE_ASSETS.BONUS_MOCKUP}
+                    alt="Kit de Juegos y Dinámicas Terapéuticas"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover rounded-2xl shadow-md hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-center p-4 text-stone-400 bg-stone-100 border-2 border-dashed border-stone-300 rounded-2xl">
+                    <span className="text-xs font-bold text-stone-500">Kit de Juegos (Bonus)</span>
+                    <span className="text-[10px]">Bloque de imagen</span>
+                  </div>
+                )}
               </div>
             </div>
 

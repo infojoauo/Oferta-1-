@@ -76,16 +76,20 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
 
           {/* RIGHT COLUMN: Product Mockup */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src={IMAGE_ASSETS.HERO_MOCKUP}
-                alt="Kit Terapéutico para Adolescentes Mockup"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover rounded-2xl"
-                onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80";
-                }}
-              />
+            <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-2xl overflow-hidden shadow-lg bg-[#FAF7F2] border border-[#E8E2D8]">
+              {IMAGE_ASSETS.HERO_MOCKUP ? (
+                <img
+                  src={IMAGE_ASSETS.HERO_MOCKUP}
+                  alt="Kit Terapéutico para Adolescentes Mockup"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center text-[#78716C] bg-stone-100 border-2 border-dashed border-stone-300 rounded-2xl">
+                  <span className="text-sm font-bold">Bloque de Imagen (Hero)</span>
+                  <span className="text-xs text-stone-400 mt-1">Aguardando URL de la imagen</span>
+                </div>
+              )}
             </div>
           </div>
 

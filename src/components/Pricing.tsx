@@ -124,16 +124,20 @@ export const Pricing: React.FC<PricingProps> = ({
               </div>
 
               {/* Mockup */}
-              <div className="w-36 mx-auto aspect-square bg-[#FAF7F2] rounded-xl overflow-hidden p-2 border border-[#E8E2D8]">
-                <img
-                  src={IMAGE_ASSETS.BASIC_KIT_MOCKUP}
-                  alt="Kit Básico"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover rounded-lg"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80";
-                  }}
-                />
+              <div className="w-36 mx-auto aspect-square bg-[#FAF7F2] rounded-xl overflow-hidden p-2 border border-[#E8E2D8] flex items-center justify-center">
+                {IMAGE_ASSETS.BASIC_KIT_MOCKUP ? (
+                  <img
+                    src={IMAGE_ASSETS.BASIC_KIT_MOCKUP}
+                    alt="Kit Básico"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-center p-2 text-stone-400 bg-stone-100 border border-dashed border-stone-300 rounded-lg">
+                    <span className="text-xs font-bold text-stone-500">Kit Básico</span>
+                    <span className="text-[10px]">Bloque de imagen</span>
+                  </div>
+                )}
               </div>
 
               {/* Price */}
@@ -197,16 +201,20 @@ export const Pricing: React.FC<PricingProps> = ({
               </div>
 
               {/* Mockup */}
-              <div className="w-44 mx-auto aspect-square rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20">
-                <img
-                  src={IMAGE_ASSETS.COMPLETE_KIT_MOCKUP}
-                  alt="Kit Completo"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover rounded-lg"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80";
-                  }}
-                />
+              <div className="w-44 mx-auto aspect-square rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20 flex items-center justify-center">
+                {IMAGE_ASSETS.COMPLETE_KIT_MOCKUP ? (
+                  <img
+                    src={IMAGE_ASSETS.COMPLETE_KIT_MOCKUP}
+                    alt="Kit Completo"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-center p-2 text-emerald-200 bg-white/10 border border-dashed border-white/30 rounded-lg">
+                    <span className="text-xs font-bold text-white">Kit Completo</span>
+                    <span className="text-[10px] text-emerald-200">Bloque de imagen</span>
+                  </div>
+                )}
               </div>
 
               {/* Price */}
