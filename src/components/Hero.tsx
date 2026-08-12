@@ -82,7 +82,11 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
                   src={IMAGE_ASSETS.HERO_MOCKUP}
                   alt="Kit Terapéutico para Adolescentes Mockup"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover rounded-2xl"
+                  loading="eager"
+                  // @ts-ignore
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-full object-cover rounded-2xl transition-opacity duration-300"
                 />
               </div>
             </div>

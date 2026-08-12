@@ -102,6 +102,8 @@ export const WhyChoose: React.FC<WhyChooseProps> = ({ onScrollToOffers }) => {
                         src={item.imageUrl}
                         alt={item.title}
                         referrerPolicy="no-referrer"
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-2.5 left-2.5 p-2 rounded-lg bg-white/95 backdrop-blur-xs text-[#2D5A27] shadow-sm border border-[#E8E2D8]">

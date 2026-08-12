@@ -87,6 +87,8 @@ export const BonusSection: React.FC<BonusSectionProps> = ({ onScrollToOffers }) 
                     src={IMAGE_ASSETS.BONUS_MOCKUP}
                     alt="Kit de Juegos y Dinámicas Terapéuticas"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover rounded-2xl shadow-md hover:scale-105 transition-transform duration-500"
                   />
                 ) : (

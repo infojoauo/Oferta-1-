@@ -109,6 +109,8 @@ export const ResourceCarousel: React.FC<ResourceCarouselProps> = ({
                       src={sample.imageKey}
                       alt={sample.title}
                       referrerPolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (

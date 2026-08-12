@@ -130,6 +130,8 @@ export const Pricing: React.FC<PricingProps> = ({
                     src={IMAGE_ASSETS.BASIC_KIT_MOCKUP}
                     alt="Kit Básico"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover rounded-lg"
                   />
                 ) : (
@@ -207,6 +209,8 @@ export const Pricing: React.FC<PricingProps> = ({
                     src={IMAGE_ASSETS.COMPLETE_KIT_MOCKUP}
                     alt="Kit Completo"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover rounded-lg"
                   />
                 ) : (
