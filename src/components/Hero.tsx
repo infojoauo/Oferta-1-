@@ -12,11 +12,11 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
     <section className="relative overflow-hidden bg-[#FAF7F2] py-10 sm:py-14 lg:py-20 border-b border-[#E8E2D8]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Desktop 2-column layout / Mobile 1-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Dynamic Layout depending on whether HERO_MOCKUP exists */}
+        <div className={`grid grid-cols-1 ${IMAGE_ASSETS.HERO_MOCKUP ? 'lg:grid-cols-12' : ''} gap-8 lg:gap-12 items-center`}>
           
-          {/* LEFT COLUMN: Text Content */}
-          <div className="lg:col-span-7 space-y-6 text-center flex flex-col items-center">
+          {/* LEFT / CENTER COLUMN: Text Content */}
+          <div className={`${IMAGE_ASSETS.HERO_MOCKUP ? 'lg:col-span-7 text-center lg:text-left items-center lg:items-start' : 'max-w-3xl mx-auto text-center items-center'} space-y-6 flex flex-col`}>
             
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-2">
@@ -31,17 +31,17 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1C1917] tracking-tight leading-[1.15] font-serif-display text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1C1917] tracking-tight leading-[1.15] font-serif-display">
               Deja de improvisar en tus sesiones con adolescentes.
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base sm:text-lg text-[#57534E] font-medium leading-relaxed max-w-2xl text-center mx-auto">
+            <p className="text-base sm:text-lg text-[#57534E] font-medium leading-relaxed max-w-2xl">
               Accede a más de 100 recursos terapéuticos prácticos para trabajar emociones, autoestima, pensamientos, habilidades sociales, ansiedad, toma de decisiones y mucho más.
             </p>
 
             {/* Quick Destaques / Key Value Props */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs sm:text-sm font-semibold text-[#44403C] text-left mx-auto max-w-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs sm:text-sm font-semibold text-[#44403C] text-left w-full max-w-xl">
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-[#DCFCE7] text-[#2D5A27] flex items-center justify-center text-xs shrink-0 font-bold">✓</div>
                 <span>Organizado por temas clínicos</span>
@@ -61,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
             </div>
 
             {/* CTA Button */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 w-full">
               <button
                 onClick={onScrollToOffers}
                 id="hero-cta-button"
@@ -74,24 +74,19 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
 
           </div>
 
-          {/* RIGHT COLUMN: Product Mockup */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-2xl overflow-hidden shadow-lg bg-[#FAF7F2] border border-[#E8E2D8]">
-              {IMAGE_ASSETS.HERO_MOCKUP ? (
+          {/* RIGHT COLUMN: Product Mockup (Only rendered if HERO_MOCKUP is set) */}
+          {IMAGE_ASSETS.HERO_MOCKUP && (
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-2xl overflow-hidden shadow-lg bg-[#FAF7F2] border border-[#E8E2D8]">
                 <img
                   src={IMAGE_ASSETS.HERO_MOCKUP}
                   alt="Kit Terapéutico para Adolescentes Mockup"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover rounded-2xl"
                 />
-              ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center text-[#78716C] bg-stone-100 border-2 border-dashed border-stone-300 rounded-2xl">
-                  <span className="text-sm font-bold">Bloque de Imagen (Hero)</span>
-                  <span className="text-xs text-stone-400 mt-1">Aguardando URL de la imagen</span>
-                </div>
-              )}
+              </div>
             </div>
-          </div>
+          )}
 
         </div>
 

@@ -18,14 +18,14 @@ export const GUARANTEE_DAYS = 7;
 
 // Image asset paths / placeholders as defined in the system
 export const IMAGE_ASSETS = {
-  HERO_MOCKUP: "https://i.ibb.co/FkQmFWTX/Chat-GPT-Image-11-de-ago-de-2026-17-21-45.png",
+  HERO_MOCKUP: "https://i.ibb.co/pjwj24TR/Gemini-Generated-Image-cle61cle61cle61c.png",
   BASIC_KIT_MOCKUP: "https://i.ibb.co/PZBN58Zy/Chat-GPT-Image-10-de-ago-de-2026-20-33-55.png",
   COMPLETE_KIT_MOCKUP: "https://i.ibb.co/p6nbr56R/Chat-GPT-Image-11-de-ago-de-2026-17-14-58.png",
   BONUS_MOCKUP: "https://i.ibb.co/bgQ7QWVY/Chat-GPT-Image-11-de-ago-de-2026-17-26-06.png",
-  BENEFIT_MORE_OPTIONS: "",
-  BENEFIT_SAVE_TIME: "",
-  BENEFIT_DIVERSE_TOPICS: "",
-  BENEFIT_PRACTICAL_VISUAL: "",
+  BENEFIT_MORE_OPTIONS: "https://i.ibb.co/rRJjqKWp/Chat-GPT-Image-11-de-ago-de-2026-17-32-38.png",
+  BENEFIT_SAVE_TIME: "https://i.ibb.co/rKDvFn9Z/Chat-GPT-Image-11-de-ago-de-2026-17-36-25.png",
+  BENEFIT_DIVERSE_TOPICS: "https://i.ibb.co/tpf6H0N7/Chat-GPT-Image-11-de-ago-de-2026-17-41-02.png",
+  BENEFIT_PRACTICAL_VISUAL: "https://i.ibb.co/rfb7FbzX/Chat-GPT-Image-Aug-11-2026-05-49-33-PM.png",
   SAMPLE_EMOTION_REGULATION: "",
   SAMPLE_COGNITIVE_DISTORTIONS: "",
   SAMPLE_ANXIETY_TRACKER: "",
