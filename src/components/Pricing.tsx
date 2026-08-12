@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import { BASIC_OFFER_URL, COMPLETE_OFFER_URL, IMAGE_ASSETS } from '../config';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface PricingProps {
   basicUrl?: string;
@@ -11,6 +12,7 @@ export const Pricing: React.FC<PricingProps> = ({
   basicUrl = BASIC_OFFER_URL,
   completeUrl = COMPLETE_OFFER_URL
 }) => {
+  const currency = useCurrency();
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 14, seconds: 52 });
 
   useEffect(() => {
@@ -144,12 +146,17 @@ export const Pricing: React.FC<PricingProps> = ({
 
               {/* Price */}
               <div>
-                <div className="text-4xl font-black text-[#1C1917] font-serif-display">
-                  US$5
+                <div className="text-3xl sm:text-4xl font-black text-[#1C1917] font-serif-display">
+                  {currency.basicPriceFormatted}
                 </div>
                 <p className="text-xs text-[#78716C] pt-1 font-medium">
                   Pago único • Formato digital
                 </p>
+                {currency.isConverted && (
+                  <p className="text-[11px] text-[#78716C] pt-2 leading-tight font-medium max-w-xs mx-auto italic">
+                    {currency.disclaimerText}
+                  </p>
+                )}
               </div>
 
               {/* Button */}
@@ -223,12 +230,17 @@ export const Pricing: React.FC<PricingProps> = ({
 
               {/* Price */}
               <div>
-                <div className="text-4xl sm:text-5xl font-black text-white font-serif-display">
-                  US$10
+                <div className="text-3xl sm:text-5xl font-black text-white font-serif-display">
+                  {currency.completePriceFormatted}
                 </div>
                 <p className="text-xs text-emerald-100 pt-1 font-medium">
                   Pago único • Acceso inmediato
                 </p>
+                {currency.isConverted && (
+                  <p className="text-[11px] text-emerald-100/90 pt-2 leading-tight font-medium max-w-xs mx-auto italic">
+                    {currency.disclaimerText}
+                  </p>
+                )}
               </div>
 
               {/* Button */}

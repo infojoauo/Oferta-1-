@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface StickyMobileCTAProps {
   onScrollToOffers: () => void;
 }
 
 export const StickyMobileCTA: React.FC<StickyMobileCTAProps> = ({ onScrollToOffers }) => {
+  const currency = useCurrency();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export const StickyMobileCTA: React.FC<StickyMobileCTAProps> = ({ onScrollToOffe
       <div className="p-3.5 rounded-full bg-[#1C1917]/95 backdrop-blur-md border border-[#44403C] shadow-2xl flex items-center justify-between gap-3 text-white">
         <div className="pl-2">
           <p className="font-bold text-xs text-white">Kit Consultorio Teen</p>
-          <p className="text-[10px] text-amber-300 font-medium">Desde US$5 • Acceso Inmediato</p>
+          <p className="text-[10px] text-amber-300 font-medium">Desde {currency.basicPriceFormatted} • Acceso Inmediato</p>
         </div>
 
         <button

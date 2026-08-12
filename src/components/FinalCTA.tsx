@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Star, CheckCircle2 } from 'lucide-react';
 import { BASIC_OFFER_URL, COMPLETE_OFFER_URL } from '../config';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface FinalCTAProps {
   basicUrl?: string;
@@ -11,6 +12,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
   basicUrl = BASIC_OFFER_URL,
   completeUrl = COMPLETE_OFFER_URL
 }) => {
+  const currency = useCurrency();
 
   const handleCheckout = (url: string) => {
     if (url && url !== "COLOCAR_LINK_HOTMART_US5_AQUI" && url !== "COLOCAR_LINK_HOTMART_US10_AQUI") {
@@ -46,7 +48,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
             className="w-full sm:w-auto px-8 py-4 sm:py-5 rounded-full bg-[#D25432] hover:bg-[#b84223] text-white font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-3 cursor-pointer group"
           >
             <Star className="w-5 h-5 fill-amber-300 text-amber-300 shrink-0" />
-            <span>Quiero el Kit Completo — US$10</span>
+            <span>Quiero el Kit Completo — {currency.completePriceFormatted}</span>
             <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -55,7 +57,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
             onClick={() => handleCheckout(basicUrl)}
             className="w-full sm:w-auto px-6 py-4 rounded-full bg-white hover:bg-slate-50 text-[#1C1917] font-bold text-xs sm:text-sm uppercase tracking-wider border border-[#E8E2D8] shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Quiero el Kit Básico — US$5</span>
+            <span>Quiero el Kit Básico — {currency.basicPriceFormatted}</span>
           </button>
 
         </div>

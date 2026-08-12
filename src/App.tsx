@@ -11,6 +11,7 @@ import { Guarantee } from './components/Guarantee';
 import { FAQ } from './components/FAQ';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { StickyMobileCTA } from './components/StickyMobileCTA';
 import { ResourcePreviewModal } from './components/ResourcePreviewModal';
 import { HotmartConfigModal } from './components/HotmartConfigModal';
 import { BASIC_OFFER_URL, COMPLETE_OFFER_URL } from './config';
@@ -89,6 +90,9 @@ export default function App() {
 
       {/* 12ª SEÇÃO — RODAPÉ */}
       <Footer />
+
+      {/* Sticky Mobile Bar */}
+      <StickyMobileCTA onScrollToOffers={scrollToOffers} />
 
       {/* Interactive PDF Worksheet Sample Modal */}
       {isPreviewModalOpen && (
