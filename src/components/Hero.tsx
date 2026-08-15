@@ -88,6 +88,14 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
                   // @ts-ignore
                   fetchPriority="high"
                   decoding="async"
+                  onError={(e) => {
+                    // Fallback to direct raw image if CDN proxy ever fails
+                    const target = e.currentTarget;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = 'true';
+                      target.src = 'https://i.ibb.co/ZRCfZJpf/98c9e8a8-ec15-4562-a63a-4c8d8099ad4c.png';
+                    }
+                  }}
                   className="w-full h-full object-cover rounded-2xl transition-opacity duration-300"
                 />
               </div>
