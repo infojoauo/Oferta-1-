@@ -10,8 +10,9 @@ import {
 } from './types';
 
 // Hotmart Offer Links
-export const BASIC_OFFER_URL = "https://pay.hotmart.com/M107100558A?off=oosp26rd";
-export const COMPLETE_OFFER_URL = "https://pay.hotmart.com/M107100558A?off=wno8js5z";
+export const BASIC_OFFER_URL = "https://pay.hotmart.com/N107174503A?off=oln1y7ri&checkoutMode=10";
+export const UPSELL_OFFER_URL = "https://pay.hotmart.com/N107174503A?off=qayx5jvr&checkoutMode=10";
+export const COMPLETE_OFFER_URL = "https://pay.hotmart.com/N107174503A?off=85b7uefg&checkoutMode=10";
 
 // Configurable Guarantee Days
 export const GUARANTEE_DAYS = 7;

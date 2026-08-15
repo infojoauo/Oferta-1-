@@ -4,22 +4,25 @@ import { X, Settings, Link, Check, Copy } from 'lucide-react';
 interface HotmartConfigModalProps {
   currentBasicUrl: string;
   currentCompleteUrl: string;
-  onSave: (basicUrl: string, completeUrl: string) => void;
+  currentUpsellUrl?: string;
+  onSave: (basicUrl: string, completeUrl: string, upsellUrl?: string) => void;
   onClose: () => void;
 }
 
 export const HotmartConfigModal: React.FC<HotmartConfigModalProps> = ({
   currentBasicUrl,
   currentCompleteUrl,
+  currentUpsellUrl = "https://pay.hotmart.com/N107174503A?off=qayx5jvr&checkoutMode=10",
   onSave,
   onClose
 }) => {
   const [basicInput, setBasicInput] = useState(currentBasicUrl);
   const [completeInput, setCompleteInput] = useState(currentCompleteUrl);
+  const [upsellInput, setUpsellInput] = useState(currentUpsellUrl);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
   const handleCopyCode = () => {
-    const codeSnippet = `BASIC_OFFER_URL = "${basicInput}";\nCOMPLETE_OFFER_URL = "${completeInput}";`;
+    const codeSnippet = `BASIC_OFFER_URL = "${basicInput}";\nUPSELL_OFFER_URL = "${upsellInput}";\nCOMPLETE_OFFER_URL = "${completeInput}";`;
     navigator.clipboard.writeText(codeSnippet);
     setCopiedKey('code');
     setTimeout(() => setCopiedKey(null), 2000);
@@ -27,7 +30,7 @@ export const HotmartConfigModal: React.FC<HotmartConfigModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSave(basicInput, completeInput);
+    onSave(basicInput, completeInput, upsellInput);
     onClose();
   };
 
@@ -73,6 +76,23 @@ export const HotmartConfigModal: React.FC<HotmartConfigModalProps> = ({
 
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-700 flex items-center justify-between">
+              <span>UPSELL_OFFER_URL (Pop-up Especial - US$7,50)</span>
+              <span className="text-emerald-600 text-[11px]">Hotmart 7.50$</span>
+            </label>
+            <div className="relative">
+              <Link className="w-4 h-4 text-slate-400 absolute left-3 top-3.5" />
+              <input
+                type="text"
+                value={upsellInput}
+                onChange={(e) => setUpsellInput(e.target.value)}
+                placeholder="https://pay.hotmart.com/YOUR_UPSELL_CODE"
+                className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-xs font-mono text-slate-800"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            <label className="text-xs font-bold text-slate-700 flex items-center justify-between">
               <span>COMPLETE_OFFER_URL (Kit Completo - US$10)</span>
               <span className="text-emerald-600 text-[11px]">Hotmart 10$</span>
             </label>
@@ -92,6 +112,7 @@ export const HotmartConfigModal: React.FC<HotmartConfigModalProps> = ({
             <p className="font-semibold text-slate-800">Código exportable:</p>
             <code className="block p-2 bg-slate-900 text-emerald-400 rounded-lg text-[11px] font-mono break-all">
               BASIC_OFFER_URL = "{basicInput}";<br />
+              UPSELL_OFFER_URL = "{upsellInput}";<br />
               COMPLETE_OFFER_URL = "{completeInput}";
             </code>
             <button

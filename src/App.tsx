@@ -13,13 +13,16 @@ import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { ResourcePreviewModal } from './components/ResourcePreviewModal';
 import { HotmartConfigModal } from './components/HotmartConfigModal';
-import { BASIC_OFFER_URL, COMPLETE_OFFER_URL } from './config';
+import { SpecialOfferModal } from './components/SpecialOfferModal';
+import { BASIC_OFFER_URL, COMPLETE_OFFER_URL, UPSELL_OFFER_URL } from './config';
 import { ResourceSampleItem } from './types';
 
 export default function App() {
   const [basicUrl, setBasicUrl] = useState(BASIC_OFFER_URL);
+  const [upsellUrl, setUpsellUrl] = useState(UPSELL_OFFER_URL);
   const [completeUrl, setCompleteUrl] = useState(COMPLETE_OFFER_URL);
 
+  const [isSpecialOfferOpen, setIsSpecialOfferOpen] = useState(false);
   const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
   const [selectedSample, setSelectedSample] = useState<ResourceSampleItem | null>(null);
 
@@ -35,6 +38,10 @@ export default function App() {
   const openPreviewWithSample = (sample?: ResourceSampleItem) => {
     setSelectedSample(sample || null);
     setIsPreviewModalOpen(true);
+  };
+
+  const handleOpenBasicOffer = () => {
+    setIsSpecialOfferOpen(true);
   };
 
   return (
@@ -70,6 +77,7 @@ export default function App() {
       <Pricing
         basicUrl={basicUrl}
         completeUrl={completeUrl}
+        onSelectBasic={handleOpenBasicOffer}
       />
 
       {/* 8ª SEÇÃO — PROVA SOCIAL (DEPOIMENTOS) */}
@@ -85,10 +93,20 @@ export default function App() {
       <FinalCTA
         basicUrl={basicUrl}
         completeUrl={completeUrl}
+        onSelectBasic={handleOpenBasicOffer}
       />
 
       {/* 12ª SEÇÃO — RODAPÉ */}
       <Footer />
+
+      {/* Special Offer Pop-up Modal (Triggered on Kit Básico click) */}
+      <SpecialOfferModal
+        isOpen={isSpecialOfferOpen}
+        onCloseToBasic={() => setIsSpecialOfferOpen(false)}
+        onAcceptUpsell={() => setIsSpecialOfferOpen(false)}
+        basicUrl={basicUrl}
+        upsellUrl={upsellUrl}
+      />
 
       {/* Interactive PDF Worksheet Sample Modal */}
       {isPreviewModalOpen && (
@@ -104,9 +122,11 @@ export default function App() {
         <HotmartConfigModal
           currentBasicUrl={basicUrl}
           currentCompleteUrl={completeUrl}
-          onSave={(bUrl, cUrl) => {
+          currentUpsellUrl={upsellUrl}
+          onSave={(bUrl, cUrl, uUrl) => {
             setBasicUrl(bUrl);
             setCompleteUrl(cUrl);
+            if (uUrl) setUpsellUrl(uUrl);
           }}
           onClose={() => setIsConfigModalOpen(false)}
         />

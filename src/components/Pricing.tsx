@@ -6,11 +6,13 @@ import { useCurrency } from '../context/CurrencyContext';
 interface PricingProps {
   basicUrl?: string;
   completeUrl?: string;
+  onSelectBasic?: () => void;
 }
 
 export const Pricing: React.FC<PricingProps> = ({
   basicUrl = BASIC_OFFER_URL,
-  completeUrl = COMPLETE_OFFER_URL
+  completeUrl = COMPLETE_OFFER_URL,
+  onSelectBasic
 }) => {
   const currency = useCurrency();
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 14, seconds: 52 });
@@ -166,7 +168,7 @@ export const Pricing: React.FC<PricingProps> = ({
 
               {/* Button */}
               <button
-                onClick={() => handleCheckout(basicUrl)}
+                onClick={() => (onSelectBasic ? onSelectBasic() : handleCheckout(basicUrl))}
                 className="w-full py-3.5 px-4 rounded-full border-2 border-[#1C1917] font-bold text-[#1C1917] hover:bg-[#FAF7F2] transition-colors text-xs uppercase tracking-wider cursor-pointer flex items-center justify-center"
               >
                 <span className="whitespace-nowrap">QUIERO EL KIT BÁSICO</span>

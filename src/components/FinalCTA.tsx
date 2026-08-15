@@ -6,11 +6,13 @@ import { useCurrency } from '../context/CurrencyContext';
 interface FinalCTAProps {
   basicUrl?: string;
   completeUrl?: string;
+  onSelectBasic?: () => void;
 }
 
 export const FinalCTA: React.FC<FinalCTAProps> = ({
   basicUrl = BASIC_OFFER_URL,
-  completeUrl = COMPLETE_OFFER_URL
+  completeUrl = COMPLETE_OFFER_URL,
+  onSelectBasic
 }) => {
   const currency = useCurrency();
 
@@ -54,7 +56,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
 
           {/* Basic Kit Button */}
           <button
-            onClick={() => handleCheckout(basicUrl)}
+            onClick={() => (onSelectBasic ? onSelectBasic() : handleCheckout(basicUrl))}
             className="w-full sm:w-auto px-6 py-4 rounded-full bg-white hover:bg-slate-50 text-[#1C1917] font-bold text-xs sm:text-sm uppercase tracking-wider border border-[#E8E2D8] shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Quiero el Kit Básico — {currency.basicPriceFormatted}</span>
