@@ -35,7 +35,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
             Transforma tus sesiones con adolescentes hoy mismo.
           </h2>
           <p className="text-base sm:text-lg text-[#57534E] leading-relaxed max-w-xl mx-auto font-medium">
-            Elige tu kit y empieza a contar con más de 80 recursos prácticos en tu práctica clínica.
+            Elige tu kit y empieza a contar con más de 130 recursos prácticos en tu práctica clínica.
           </p>
         </div>
 

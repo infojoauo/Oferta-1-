@@ -18,7 +18,7 @@ export const GUARANTEE_DAYS = 7;
 
 // Image asset paths / placeholders as defined in the system
 export const IMAGE_ASSETS = {
-  HERO_MOCKUP: "https://i.ibb.co/pjwj24TR/Gemini-Generated-Image-cle61cle61cle61c.png",
+  HERO_MOCKUP: "https://i.ibb.co/ZRCfZJpf/98c9e8a8-ec15-4562-a63a-4c8d8099ad4c.png",
   BASIC_KIT_MOCKUP: "https://i.ibb.co/PZBN58Zy/Chat-GPT-Image-10-de-ago-de-2026-20-33-55.png",
   COMPLETE_KIT_MOCKUP: "https://i.ibb.co/p6nbr56R/Chat-GPT-Image-11-de-ago-de-2026-17-14-58.png",
   BONUS_MOCKUP: "https://i.ibb.co/bgQ7QWVY/Chat-GPT-Image-11-de-ago-de-2026-17-26-06.png",
@@ -339,7 +339,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-3',
     question: '¿Qué incluye la opción de US$10?',
-    answer: 'La opción completa incluye más de 100 recursos terapéuticos y el Bono de Juegos y Dinámicas Terapéuticas.'
+    answer: 'La opción completa incluye más de 130 recursos terapéuticos y el Bono de Juegos y Dinámicas Terapéuticas.'
   },
   {
     id: 'faq-4',

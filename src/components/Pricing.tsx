@@ -146,8 +146,13 @@ export const Pricing: React.FC<PricingProps> = ({
 
               {/* Price */}
               <div>
-                <div className="text-3xl sm:text-4xl font-black text-[#1C1917] font-serif-display">
-                  {currency.basicPriceFormatted}
+                <div className="flex flex-col items-center justify-center">
+                  <span className="text-base sm:text-lg font-bold text-red-600 line-through tracking-tight">
+                    {currency.formatAmount ? currency.formatAmount(10) : 'US$10'}
+                  </span>
+                  <div className="text-3xl sm:text-4xl font-black text-[#1C1917] font-serif-display">
+                    {currency.basicPriceFormatted}
+                  </div>
                 </div>
                 <p className="text-xs text-[#78716C] pt-1 font-medium">
                   Pago único • Formato digital
@@ -205,7 +210,7 @@ export const Pricing: React.FC<PricingProps> = ({
                   KIT COMPLETO
                 </h3>
                 <p className="text-xs sm:text-sm font-bold text-amber-300 uppercase tracking-wider mt-0.5">
-                  100+ Recursos + Juegos Terapéuticos
+                  130+ Recursos + Juegos Terapéuticos
                 </p>
               </div>
 
@@ -230,8 +235,13 @@ export const Pricing: React.FC<PricingProps> = ({
 
               {/* Price */}
               <div>
-                <div className="text-3xl sm:text-5xl font-black text-white font-serif-display">
-                  {currency.completePriceFormatted}
+                <div className="flex flex-col items-center justify-center">
+                  <span className="text-lg sm:text-xl font-bold text-red-400 sm:text-red-300 line-through tracking-tight">
+                    {currency.formatAmount ? currency.formatAmount(27) : 'US$27'}
+                  </span>
+                  <div className="text-3xl sm:text-5xl font-black text-white font-serif-display">
+                    {currency.completePriceFormatted}
+                  </div>
                 </div>
                 <p className="text-xs text-emerald-100 pt-1 font-medium">
                   Pago único • Acceso inmediato
@@ -256,7 +266,7 @@ export const Pricing: React.FC<PricingProps> = ({
               <ul className="text-left space-y-3 pt-3 text-xs sm:text-sm text-white font-medium border-t border-emerald-700/60">
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                  <span>100+ recursos terapéuticos</span>
+                  <span>130+ recursos terapéuticos</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />

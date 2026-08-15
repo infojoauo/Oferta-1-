@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToOffers }) => {
 
             {/* Subheadline */}
             <p className="text-base sm:text-lg text-[#57534E] font-medium leading-relaxed max-w-2xl">
-              Accede a más de 100 recursos terapéuticos prácticos para trabajar emociones, autoestima, pensamientos, habilidades sociales, ansiedad, toma de decisiones y mucho más.
+              Accede a más de 130 recursos terapéuticos prácticos para trabajar emociones, autoestima, pensamientos, habilidades sociales, ansiedad, toma de decisiones y mucho más.
             </p>
 
             {/* Quick Destaques / Key Value Props */}
