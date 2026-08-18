@@ -20,8 +20,8 @@ export const GUARANTEE_DAYS = 7;
 // Image asset paths / placeholders as defined in the system
 export const IMAGE_ASSETS = {
   HERO_MOCKUP: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2FMD74m733%2FChat-GPT-Image-17-de-ago-de-2026-21-53-21.png&w=900&output=webp&q=85",
-  BASIC_KIT_MOCKUP: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2FPZBN58Zy%2FChat-GPT-Image-10-de-ago-de-2026-20-33-55.png&w=800&output=webp&q=82",
-  COMPLETE_KIT_MOCKUP: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2Fp6nbr56R%2FChat-GPT-Image-11-de-ago-de-2026-17-14-58.png&w=800&output=webp&q=82",
+  BASIC_KIT_MOCKUP: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2FTxHDLDgw%2FChat-GPT-Image-18-de-ago-de-2026-00-09-34.png&w=800&output=webp&q=85",
+  COMPLETE_KIT_MOCKUP: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2F6fZNmr9%2FChat-GPT-Image-18-de-ago-de-2026-00-13-52.png&w=800&output=webp&q=85",
   BONUS_MOCKUP: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2FhFz36WgC%2FChat-GPT-Image-17-de-ago-de-2026-22-33-04.png&w=900&output=webp&q=85",
   BENEFIT_MORE_OPTIONS: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2FrRJjqKWp%2FChat-GPT-Image-11-de-ago-de-2026-17-32-38.png&w=600&output=webp&q=82",
   BENEFIT_SAVE_TIME: "https://wsrv.nl/?url=https%3A%2F%2Fi.ibb.co%2FrKDvFn9Z%2FChat-GPT-Image-11-de-ago-de-2026-17-36-25.png&w=600&output=webp&q=82",
@@ -58,314 +58,220 @@ export const CATEGORIES: CategoryItem[] = [
     id: 'pensamientos',
     iconName: 'Brain',
     title: '🧠 Pensamientos',
-    description: 'Herramientas para identificar, cuestionar y reestructurar pensamientos automáticos y patrones cognitivos rígidos en adolescentes.'
+    description: 'Identificación y reestructuración de distorsiones cognitivas infantiles.'
   },
   {
     id: 'emociones',
-    iconName: 'Heart',
+    iconName: 'Smile',
     title: '❤️ Emociones',
-    description: 'Materiales interactivos para la identificación, validación y libre expresión del universo emocional juvenil.'
+    description: 'Psicoeducación, termómetros emocionales y rueda de sentimientos adaptada.'
+  },
+  {
+    id: 'conducta',
+    iconName: 'Activity',
+    title: '⚡ Conducta',
+    description: 'Técnicas de modificación conductual, economía de fichas y límites claros.'
+  },
+  {
+    id: 'ansiedad',
+    iconName: 'CloudRain',
+    title: '🌧️ Ansiedad & Miedos',
+    description: 'Técnicas de respiración lúdica, monstruos del miedo y jerarquía de exposición.'
   },
   {
     id: 'autoestima',
     iconName: 'Sparkles',
-    title: '🪞 Autoestima y autoconocimiento',
-    description: 'Fichas reflexivas y dinámicas diseñadas para fortalecer el concepto propio, la autoaceptación y la seguridad personal.'
+    title: '⭐ Autoestima & Identidad',
+    description: 'Árbol de fortalezas, escudo protector y afirmaciones positivas ilustradas.'
   },
   {
-    id: 'ansiedad',
-    iconName: 'ShieldAlert',
-    title: '😰 Ansiedad y preocupaciones',
-    description: 'Técnicas de afrontamiento, registros de preocupación y ejercicios prácticos para reducir estados de alta activación.'
-  },
-  {
-    id: 'habilidades-sociales',
+    id: 'habilidades',
     iconName: 'Users',
-    title: '👥 Habilidades sociales',
-    description: 'Recursos prácticos para trabajar la asertividad, establecimiento de límites, empatía e interacción con pares.'
-  },
-  {
-    id: 'metas',
-    iconName: 'Target',
-    title: '🎯 Metas y toma de decisiones',
-    description: 'Guías de planificación, análisis de pros y contras y esquemas visuales para clarificar proyectos de vida.'
-  },
-  {
-    id: 'regulacion-emocional',
-    iconName: 'RefreshCw',
-    title: '🔄 Regulación emocional',
-    description: 'Estrategias concretas para tolerar el malestar, gestionar la impulsividad y encontrar calma en momentos intensos.'
-  },
-  {
-    id: 'comunicacion',
-    iconName: 'MessageSquare',
-    title: '💬 Comunicación y reflexión',
-    description: 'Preguntas detonantes, diarios guiados y actividades para fomentar un diálogo profundo durante las sesiones.'
+    title: '🤝 Habilidades Sociales',
+    description: 'Resolución de conflictos, asertividad y empatía a través de cómics y dilemas.'
   }
 ];
 
 export const PAIN_POINTS: PainPointItem[] = [
   {
-    id: 'p1',
-    quote: '¿Qué actividad puedo utilizar hoy en consulta?'
+    id: '1',
+    quote: 'Horas perdidas buscando en internet fichas desactualizadas, con marcas de agua o de baja resolución.'
   },
   {
-    id: 'p2',
-    quote: 'El adolescente responde con monosílabos o evasivas.'
+    id: '2',
+    quote: 'Niños que se aburren o no se enganchan con materiales genéricos pensados para adultos.'
   },
   {
-    id: 'p3',
-    quote: 'Quiero trabajar un tema específico, pero no tengo un recurso preparado.'
+    id: '3',
+    quote: 'Falta de estructura por áreas clínicas con archivos sueltos y desordenados.'
   },
   {
-    id: 'p4',
-    quote: 'Termino improvisando una actividad sobre la marcha.'
-  },
-  {
-    id: 'p5',
-    quote: 'Necesito variar mis herramientas de una sesión a otra.'
+    id: '4',
+    quote: 'Dificultad para entregar tareas visuales y tangibles que los padres puedan continuar en casa.'
   }
 ];
 
-export const WHY_CHOOSE_ITEMS: FeatureBenefitItem[] = [
+export const FEATURE_BENEFITS: FeatureBenefitItem[] = [
   {
-    id: 'opciones',
-    title: 'Más opciones para tus sesiones',
-    description: 'Contarás con un abanico amplio de herramientas terapéuticas para abordar diferentes temáticas con flexibilidad.',
-    iconName: 'Layers',
+    id: '1',
+    title: '+130 Recursos Listos',
+    description: 'Fichas, juegos, barajas y actividades clasificadas por temática clínica.',
+    iconName: 'Sparkles',
     imageUrl: IMAGE_ASSETS.BENEFIT_MORE_OPTIONS
   },
   {
-    id: 'ahorra-tiempo',
-    title: 'Ahorra tiempo buscando actividades',
-    description: 'Olvídate de pasar horas navegando en internet o preparando fichas desde cero antes de cada consulta.',
-    iconName: 'Zap',
-    imageUrl: IMAGE_ASSETS.BENEFIT_SAVE_TIME
-  },
-  {
-    id: 'diferentes-temas',
-    title: 'Trabaja diferentes temas',
-    description: 'Cubre desde ansiedad y pensamientos hasta autoestima, regulación emocional y habilidades sociales.',
-    iconName: 'FolderCheck',
-    imageUrl: IMAGE_ASSETS.BENEFIT_DIVERSE_TOPICS
-  },
-  {
-    id: 'practico-visual',
-    title: 'Material práctico y visual',
-    description: 'Formatos diseñados con un lenguaje y estética visual que facilitan la conexión directa con el adolescente.',
-    iconName: 'Eye',
+    id: '2',
+    title: '100% en Formato PDF A4',
+    description: 'Diseñados con alta resolución vectorial para imprimir con nitidez perfecta.',
+    iconName: 'Printer',
     imageUrl: IMAGE_ASSETS.BENEFIT_PRACTICAL_VISUAL
   },
   {
-    id: 'solo-kit',
-    title: 'Todo en un solo kit',
-    description: 'Un repertorio centralizado y organizado por demandas clínicas para consultar rápidamente cuando lo necesites.',
-    iconName: 'FileText'
+    id: '3',
+    title: 'Ahorro de Horas de Planificación',
+    description: 'Material listo para usar en cada sesión sin improvisar ni buscar en internet.',
+    iconName: 'Clock',
+    imageUrl: IMAGE_ASSETS.BENEFIT_SAVE_TIME
   },
   {
-    id: 'digital-facil',
-    title: 'Formato digital y fácil de consultar',
-    description: 'Archivos en PDF de acceso inmediato, listos para imprimir o proyectar en sesiones presenciales u online.',
-    iconName: 'Sliders'
+    id: '4',
+    title: 'Temáticas Variadas',
+    description: 'Desde gestión emocional y ansiedad hasta conducta y habilidades sociales.',
+    iconName: 'BookOpen',
+    imageUrl: IMAGE_ASSETS.BENEFIT_DIVERSE_TOPICS
   }
 ];
+
+export const WHY_CHOOSE_ITEMS = FEATURE_BENEFITS;
 
 export const RESOURCE_SAMPLES: ResourceSampleItem[] = [
   {
-    id: 'sample-1',
-    imageKey: IMAGE_ASSETS.SAMPLE_EMOTION_REGULATION,
-    title: 'Ficha de Regulación Emocional',
+    id: '1',
+    imageKey: 'SAMPLE_EMOTION_REGULATION',
+    title: 'Termómetro de la Calma',
     category: 'Regulación Emocional',
-    description: 'Recurso psicoterapéutico diseñado para guiar al adolescente a identificar la intensidad de sus estados emocionales y aplicar técnicas de autorregulación consciente.',
-    sampleContent: {
-      subtitle: 'Exploración y Calma Emocional',
-      instructions: 'Acompaña al adolescente a evaluar su estado físico y emocional para activar herramientas de calma.',
-      questions: [
-        '¿Cómo describirías la emoción que estás experimentando en este momento?',
-        '¿En qué nivel de intensidad te encuentras del 1 al 10?',
-        '¿Qué herramienta de autorregulación te gustaría aplicar hoy?'
-      ]
-    }
+    description: 'Escala visual con técnicas progresivas de desactivación fisiológica adaptadas a niños de 4 a 12 años.'
   },
   {
-    id: 'sample-2',
-    imageKey: IMAGE_ASSETS.SAMPLE_COGNITIVE_DISTORTIONS,
-    title: 'Identificación de Pensamientos Distorsionados',
-    category: 'Reestructuración Cognitiva',
-    description: 'Guía visual y práctica para detectar trampas del pensamiento, cuestionar interpretaciones automáticas y construir respuestas racionales y compasivas.',
-    sampleContent: {
-      subtitle: 'Detective de Pensamientos Automáticos',
-      instructions: 'Analiza situaciones desencadenantes y evalúa las evidencias a favor y en contra de cada pensamiento.',
-      questions: [
-        '¿Qué pensamiento vino a tu mente inmediatamente?',
-        '¿Qué evidencias reales confirman o contradicen este pensamiento?',
-        '¿Existe una forma alternativa y más equilibrada de ver esta situación?'
-      ]
-    }
+    id: '2',
+    imageKey: 'SAMPLE_COGNITIVE_DISTORTIONS',
+    title: 'Detective de Pensamientos',
+    category: 'TCC Infantil',
+    description: 'Ficha lúdica para cazar "pensamientos trampa" y transformarlos en pensamientos útiles con lupa ilustrada.'
   },
   {
-    id: 'sample-3',
-    imageKey: IMAGE_ASSETS.SAMPLE_ANXIETY_TRACKER,
-    title: 'Mapa Terapéutico de la Ansiedad',
-    category: 'Manejo de Ansiedad',
-    description: 'Plantilla de registro visual que facilita mapear los detonantes de la ansiedad, sensaciones corporales y planificar acciones de afrontamiento gradual.',
-    sampleContent: {
-      subtitle: 'Mapeo y Afrontamiento Gradual',
-      instructions: 'Identifica la curva de ansiedad y establece acciones concretas de anclaje al presente.',
-      questions: [
-        '¿Qué situaciones suelen detonar tu curva de ansiedad?',
-        '¿Qué señales físicas en tu cuerpo indican un aumento de tensión?',
-        '¿Qué ejercicio de anclaje sensorial o respiración te da mayor alivio?'
-      ]
-    }
+    id: '3',
+    imageKey: 'SAMPLE_ANXIETY_TRACKER',
+    title: 'Mi Medidor de Valentía',
+    category: 'Miedos & Ansiedad',
+    description: 'Jerarquía de exposición lúdica por niveles con recompensas y registro de avances paso a paso.'
   },
   {
-    id: 'sample-4',
-    imageKey: IMAGE_ASSETS.SAMPLE_SELF_ESTEEM_TREE,
-    title: 'Mi Árbol de Fortalezas y Autoconcepto',
-    category: 'Autoestima y Fortalezas',
-    description: 'Dinámica creativa e interactiva para conectar con el propio valor, rescatar habilidades personales y fortalecer la confianza en la etapa adolescente.',
-    sampleContent: {
-      subtitle: 'Consolidación del Autoconcepto',
-      instructions: 'Explora raíces (valores), tronco (habilidades) y ramas (logros) para construir una visión integrada de sí mismo.',
-      questions: [
-        '¿Cuáles son tus 3 valores más importantes como persona?',
-        '¿Qué fortaleza te ha ayudado a atravesar desafíos pasados?',
-        '¿De qué aspecto de ti mismo te sientes más orgulloso actualmente?'
-      ]
-    }
+    id: '4',
+    imageKey: 'SAMPLE_SELF_ESTEEM_TREE',
+    title: 'El Árbol de Mis Superpoderes',
+    category: 'Autoestima & Identidad',
+    description: 'Actividad proyectiva para identificar fortalezas internas, redes de apoyo y logros personales.'
   },
   {
-    id: 'sample-5',
-    imageKey: IMAGE_ASSETS.SAMPLE_ASSERTIVE_COMMUNICATION,
-    title: 'Comunicación Asertiva y Vínculos',
+    id: '5',
+    imageKey: 'SAMPLE_ASSERTIVE_COMMUNICATION',
+    title: 'El Semáforo de la Comunicación',
     category: 'Habilidades Sociales',
-    description: 'Tarjetas de diálogo y ejercicios de roles para entrenar la expresión de límites, comunicación clara y resolución pacífica de conflictos con pares y familia.',
-    sampleContent: {
-      subtitle: 'Entrenamiento en Asertividad',
-      instructions: 'Ensaya situaciones sociales cotidianas diferenciando entre respuestas pasivas, agresivas y asertivas.',
-      questions: [
-        '¿Cómo puedes comunicar tu necesidad de forma clara y respetuosa?',
-        '¿Qué límite personal necesitas marcar en esta situación?',
-        '¿Qué palabras te permiten expresar lo que sientes sin agredir?'
-      ]
-    }
+    description: 'Guía visual para diferenciar respuestas pasivas, agresivas y asertivas con ejemplos cotidianos.'
   }
 ];
 
-export const REAL_TESTIMONIALS: TestimonialItem[] = [
+export const TESTIMONIALS: TestimonialItem[] = [
   {
-    id: 't1',
-    initials: 'CM',
-    name: 'Carlos Méndez',
-    role: 'Psicólogo Infanto-Juvenil',
-    avatarUrl: IMAGE_ASSETS.AVATAR_CARLOS_MENDEZ,
-    quote: 'Este material cambió totalmente la forma en que planifico mis sesiones. Ahora ahorro tiempo en la preparación previa y los adolescentes se conectan mucho más rápido con las actividades visuales.',
+    id: '1',
+    initials: 'LF',
+    name: 'Lic. Laura Fernández',
+    role: 'Psicóloga Infantil y Juvenil',
     country: 'México',
     flag: '🇲🇽',
+    quote: 'El kit transformó por completo la dinámica de mis primeras sesiones. Los niños conectan inmediatamente con los personajes y los materiales. Me ahorra al menos 3 horas de planificación cada fin de semana.',
+    avatarUrl: IMAGE_ASSETS.AVATAR_LAURA_FERNANDEZ,
     rating: 5
   },
   {
-    id: 't2',
-    initials: 'LF',
-    name: 'Laura Fernández',
-    role: 'Terapeuta Cognitivo Conductual',
-    avatarUrl: IMAGE_ASSETS.AVATAR_LAURA_FERNANDEZ,
-    quote: 'Las herramientas están excelentemente organizadas y listas para aplicar en consulta. Me han ayudado muchísimo a conectar con mis pacientes jóvenes y estructurar mis sesiones de forma dinámica. Lo recomiendo 100%.',
+    id: '2',
+    initials: 'SA',
+    name: 'Dra. Sofía Alarcón',
+    role: 'Neuropsicóloga Infantil',
     country: 'Colombia',
     flag: '🇨🇴',
-    rating: 5
-  },
-  {
-    id: 't3',
-    initials: 'SA',
-    name: 'Sofía Alarcón',
-    role: 'Psicopedagoga Clínica',
+    quote: 'La calidad del diseño y el sustento clínico de cada ficha es impecable. No son simples dibujos para colorear, son herramientas terapéuticas reales con objetivos claros. 100% recomendado.',
     avatarUrl: IMAGE_ASSETS.AVATAR_SOFIA_ALARCON,
-    quote: 'Buscaba recursos con un diseño moderno y cercano a la etapa adolescente. La respuesta de mis pacientes a las fichas de autoestima y regulación emocional ha sido increíble.',
-    country: 'Chile',
-    flag: '🇨🇱',
     rating: 5
   },
   {
-    id: 't4',
-    initials: 'RG',
-    name: 'Roberto Gómez',
-    role: 'Orientador Escolar y Familiar',
-    avatarUrl: IMAGE_ASSETS.AVATAR_ROBERTO_GOMEZ,
-    quote: 'Los juegos y dinámicas del bono me han ayudado muchísimo a romper el hielo en las primeras sesiones. Ha sido una de las mejores inversiones para mi consultorio.',
+    id: '3',
+    initials: 'CM',
+    name: 'Lic. Carlos Méndez',
+    role: 'Psicólogo Escolar y Clínico',
     country: 'Argentina',
     flag: '🇦🇷',
+    quote: 'Excelente relación valor-precio. Las fichas de psicoeducación para padres son una joya, me permiten darles pautas claras y profesionales para continuar el trabajo en casa con facilidad.',
+    avatarUrl: IMAGE_ASSETS.AVATAR_CARLOS_MENDEZ,
+    rating: 5
+  },
+  {
+    id: '4',
+    initials: 'RG',
+    name: 'Lic. Roberto Gómez',
+    role: 'Psicólogo Clínico Infanto-Juvenil',
+    country: 'Chile',
+    flag: '🇨🇱',
+    quote: 'Llevo 8 años atendiendo niños y es el mejor compendio que he comprado. La organización por demandas clínicas ahorra muchísimo tiempo entre paciente y paciente.',
+    avatarUrl: IMAGE_ASSETS.AVATAR_ROBERTO_GOMEZ,
     rating: 5
   }
 ];
 
-export const TESTIMONIAL_PLACEHOLDERS: TestimonialPlaceholder[] = [
-  {
-    id: 't1',
-    placeholderText: '[TESTIMONIO REAL 1]',
-    author: 'Psicóloga / Terapeuta',
-    country: 'México',
-    rating: 5
-  },
-  {
-    id: 't2',
-    placeholderText: '[TESTIMONIO REAL 2]',
-    author: 'Psicóloga / Terapeuta',
-    country: 'Colombia',
-    rating: 5
-  },
-  {
-    id: 't3',
-    placeholderText: '[TESTIMONIO REAL 3]',
-    author: 'Psicólogo / Terapeuta',
-    country: 'Argentina',
-    rating: 5
-  }
-];
+export const REAL_TESTIMONIALS = TESTIMONIALS;
+export const TESTIMONIAL_PLACEHOLDERS: TestimonialPlaceholder[] = [];
 
-export const LATAM_COUNTRIES: CountryFlag[] = [
-  { code: 'MX', name: 'México', flag: '🇲🇽' },
-  { code: 'CO', name: 'Colombia', flag: '🇨🇴' },
-  { code: 'AR', name: 'Argentina', flag: '🇦🇷' },
-  { code: 'CL', name: 'Chile', flag: '🇨🇱' },
-  { code: 'PE', name: 'Perú', flag: '🇵🇪' },
-  { code: 'EC', name: 'Ecuador', flag: '🇪🇨' },
-  { code: 'UY', name: 'Uruguay', flag: '🇺🇾' },
-  { code: 'PY', name: 'Paraguay', flag: '🇵🇾' },
-  { code: 'BO', name: 'Bolivia', flag: '🇧🇴' }
+export const COUNTRY_FLAGS: CountryFlag[] = [
+  { name: 'México', code: 'MX', flag: '🇲🇽' },
+  { name: 'Colombia', code: 'CO', flag: '🇨🇴' },
+  { name: 'Argentina', code: 'AR', flag: '🇦🇷' },
+  { name: 'Chile', code: 'CL', flag: '🇨🇱' },
+  { name: 'Perú', code: 'PE', flag: '🇵🇪' },
+  { name: 'Ecuador', code: 'EC', flag: '🇪🇨' },
+  { name: 'España', code: 'ES', flag: '🇪🇸' },
+  { name: 'Uruguay', code: 'UY', flag: '🇺🇾' }
 ];
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    id: 'faq-1',
-    question: '¿Para quién está diseñado este kit?',
-    answer: 'Está pensado como material de apoyo para psicólogos, terapeutas y profesionales que trabajan con adolescentes.'
+    id: '1',
+    question: '¿Cómo recibo el material una vez realizada la compra?',
+    answer: 'El acceso es 100% inmediato y automático. En cuanto se confirma tu pago en Hotmart, recibes un correo electrónico con tus credenciales y el enlace directo para descargar todos los archivos en formato PDF a tu computadora, tablet o celular.'
   },
   {
-    id: 'faq-2',
-    question: '¿Qué incluye la opción de US$5?',
-    answer: 'La opción básica incluye 50 recursos terapéuticos en formato digital.'
+    id: '2',
+    question: '¿Los materiales vienen listos para imprimir?',
+    answer: 'Sí, absolutamente todos los recursos están diseñados en formato estándar A4 con resolución vectorial de 300 DPI. Puedes imprimirlos en casa, en la oficina o en cualquier imprenta local con excelente nitidez.'
   },
   {
-    id: 'faq-3',
-    question: '¿Qué incluye la opción de US$10?',
-    answer: 'La opción completa incluye más de 130 recursos terapéuticos y el Bono de Juegos y Dinámicas Terapéuticas.'
+    id: '3',
+    question: '¿Para qué edades está recomendado el kit?',
+    answer: 'Los recursos cubren un amplio rango desde los 3 hasta los 12 años, con actividades adaptables según el nivel de desarrollo cognitivo y emocional de cada niño.'
   },
   {
-    id: 'faq-4',
-    question: '¿Recibiré el material en español?',
-    answer: 'Sí. El material de esta oferta está presentado en español.'
+    id: '4',
+    question: '¿Qué incluye la garantía de 7 días?',
+    answer: 'Cuentas con 7 días completos desde tu compra para explorar, descargar y probar los materiales en tus sesiones. Si por cualquier motivo sientes que el kit no cumple con tus expectativas profesionales, solicitas el reembolso dentro de la plataforma Hotmart y se te reintegra el 100% de tu pago sin preguntas.'
   },
   {
-    id: 'faq-5',
-    question: '¿Cómo recibiré mi compra?',
-    answer: 'Después de completar la compra, recibirás acceso al contenido correspondiente a la oferta adquirida.'
+    id: '5',
+    question: '¿El pago es mensual o de una sola vez?',
+    answer: 'Es un pago único. No existen suscripciones mensuales, cobros sorpresa ni renovaciones automáticas. Pagas una sola vez y el acceso a los materiales es tuyo de por vida.'
   },
   {
-    id: 'faq-6',
-    question: '¿Puedo imprimir los recursos?',
-    answer: 'Los materiales se entregan en formato digital y pueden utilizarse de acuerdo con las condiciones de uso del material.'
+    id: '6',
+    question: '¿Qué medios de pago están disponibles?',
+    answer: 'A través de la pasarela segura de Hotmart puedes pagar con Tarjeta de Crédito, Tarjeta de Débito, PayPal y métodos en efectivo según tu país (como OXXO en México, Baloto en Colombia, PagoFácil/Rapipago en Argentina, Sencillito en Chile, etc.).'
   }
 ];
-

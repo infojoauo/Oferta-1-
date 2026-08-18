@@ -105,24 +105,22 @@ export const ClonedPricing: React.FC<ClonedPricingProps> = ({
                 </span>
               </div>
 
-              {/* Prepared mockup container */}
-              <div className="max-w-xs mx-auto w-full">
-                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-stone-50 p-2 flex items-center justify-center border border-stone-200">
-                  {IMAGE_ASSETS.BASIC_KIT_MOCKUP ? (
-                    <img
-                      src={IMAGE_ASSETS.BASIC_KIT_MOCKUP}
-                      alt="Kit Básico"
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    <div className="w-full h-full rounded-lg bg-white border border-dashed border-stone-300 flex flex-col items-center justify-center text-stone-400 p-2 text-center">
-                      <ImageIcon className="w-8 h-8 stroke-[1.2] mb-1 text-stone-300" />
-                      <span className="text-[10px] font-bold text-stone-400 uppercase">Espacio Imagen</span>
-                      <span className="text-[9px] text-stone-400">Kit Básico</span>
-                    </div>
-                  )}
-                </div>
+              {/* Clean Mockup Image Display (No gray box or border) */}
+              <div className="max-w-xs mx-auto w-full flex items-center justify-center">
+                {IMAGE_ASSETS.BASIC_KIT_MOCKUP ? (
+                  <img
+                    src={IMAGE_ASSETS.BASIC_KIT_MOCKUP}
+                    alt="Kit Básico"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-auto max-h-[260px] object-contain drop-shadow-sm"
+                  />
+                ) : (
+                  <div className="w-full h-48 rounded-lg bg-stone-50 border-2 border-dashed border-stone-200 flex flex-col items-center justify-center text-stone-400 p-2 text-center">
+                    <ImageIcon className="w-8 h-8 stroke-[1.2] mb-1 text-stone-300" />
+                    <span className="text-[10px] font-bold text-stone-400 uppercase">Espacio Imagen</span>
+                    <span className="text-[9px] text-stone-400">Kit Básico</span>
+                  </div>
+                )}
               </div>
 
               {/* Price section (De $15 por $5 USD) */}
@@ -214,24 +212,22 @@ export const ClonedPricing: React.FC<ClonedPricingProps> = ({
                 </span>
               </div>
 
-              {/* Prepared mockup container */}
-              <div className="max-w-xs mx-auto w-full">
-                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-stone-50 p-2 flex items-center justify-center border border-stone-200">
-                  {IMAGE_ASSETS.COMPLETE_KIT_MOCKUP ? (
-                    <img
-                      src={IMAGE_ASSETS.COMPLETE_KIT_MOCKUP}
-                      alt="Kit Completo"
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    <div className="w-full h-full rounded-lg bg-white border border-dashed border-emerald-300 flex flex-col items-center justify-center text-stone-400 p-2 text-center">
-                      <ImageIcon className="w-8 h-8 stroke-[1.2] mb-1 text-emerald-400" />
-                      <span className="text-[10px] font-bold text-emerald-700 uppercase">Espacio Imagen</span>
-                      <span className="text-[9px] text-stone-400">Kit Completo</span>
-                    </div>
-                  )}
-                </div>
+              {/* Clean Mockup Image Display (No gray box or border) */}
+              <div className="max-w-xs mx-auto w-full flex items-center justify-center">
+                {IMAGE_ASSETS.COMPLETE_KIT_MOCKUP ? (
+                  <img
+                    src={IMAGE_ASSETS.COMPLETE_KIT_MOCKUP}
+                    alt="Kit Completo"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-auto max-h-[260px] object-contain drop-shadow-sm"
+                  />
+                ) : (
+                  <div className="w-full h-48 rounded-lg bg-stone-50 border-2 border-dashed border-stone-200 flex flex-col items-center justify-center text-stone-400 p-2 text-center">
+                    <ImageIcon className="w-8 h-8 stroke-[1.2] mb-1 text-emerald-400" />
+                    <span className="text-[10px] font-bold text-emerald-700 uppercase">Espacio Imagen</span>
+                    <span className="text-[9px] text-stone-400">Kit Completo</span>
+                  </div>
+                )}
               </div>
 
               {/* Price section (De $20 por $10 USD) */}
