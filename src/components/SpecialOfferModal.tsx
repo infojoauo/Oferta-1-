@@ -5,14 +5,16 @@ import { BASIC_OFFER_URL, UPSELL_OFFER_URL } from '../config';
 
 interface SpecialOfferModalProps {
   isOpen: boolean;
-  onCloseToBasic: () => void;
-  onAcceptUpsell: () => void;
+  onClose?: () => void;
+  onCloseToBasic?: () => void;
+  onAcceptUpsell?: () => void;
   basicUrl?: string;
   upsellUrl?: string;
 }
 
 export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
   isOpen,
+  onClose,
   onCloseToBasic,
   onAcceptUpsell,
   basicUrl = BASIC_OFFER_URL,
@@ -20,15 +22,32 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
+  // Simply close the popup when clicking the 'X' or backdrop
+  const handlePureClose = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onClose) {
+      onClose();
+    } else if (onCloseToBasic) {
+      onCloseToBasic();
+    }
+  };
+
+  // When accepting the special upsell offer ($7.50)
   const handleAccept = () => {
-    onAcceptUpsell();
+    if (onAcceptUpsell) onAcceptUpsell();
+    if (onClose) onClose();
     if (upsellUrl) {
       window.open(upsellUrl, '_blank');
     }
   };
 
-  const handleDecline = () => {
-    onCloseToBasic();
+  // When explicitly declining and proceeding to buy the Basic kit ($5)
+  const handleDeclineToBasic = () => {
+    if (onCloseToBasic) {
+      onCloseToBasic();
+    } else if (onClose) {
+      onClose();
+    }
     if (basicUrl) {
       window.open(basicUrl, '_blank');
     }
@@ -40,10 +59,10 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
         id="special-offer-modal-overlay"
         className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 overflow-y-auto"
       >
-        {/* Backdrop click triggers decline to basic checkout */}
+        {/* Backdrop click closes modal */}
         <div 
           className="fixed inset-0" 
-          onClick={handleDecline} 
+          onClick={handlePureClose} 
           aria-hidden="true" 
         />
 
@@ -55,12 +74,13 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
           transition={{ duration: 0.18, ease: "easeOut" }}
           className="relative bg-white rounded-2xl max-w-[360px] sm:max-w-[380px] w-full my-auto shadow-2xl border border-stone-200 z-10 p-4 sm:p-5 flex flex-col text-center"
         >
-          {/* Close Button ('X') */}
+          {/* Close Button ('X') - Instantly closes modal */}
           <button
             id="close-special-offer-btn"
-            onClick={handleDecline}
-            aria-label="Cerrar y continuar con el Kit Básico"
-            className="absolute top-3 right-3 p-1 rounded-full text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors cursor-pointer"
+            type="button"
+            onClick={handlePureClose}
+            aria-label="Cerrar ventana"
+            className="absolute top-3 right-3 p-1.5 rounded-full text-stone-400 hover:text-stone-800 hover:bg-stone-100 transition-colors cursor-pointer z-20"
           >
             <X className="w-4 h-4" />
           </button>
@@ -106,11 +126,11 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
               </li>
               <li className="flex items-center gap-1.5 text-stone-900 font-semibold">
                 <span className="text-amber-500 text-[11px]">🎁</span>
-                <span>BONO: Juegos y Dinámicas Grupales</span>
+                <span>BONO: Juegos Terapéuticos</span>
               </li>
               <li className="flex items-center gap-1.5 text-stone-900 font-semibold">
-                <span className="text-amber-500 text-[11px]">🎁</span>
-                <span>BONO: Guía de Preguntas Clave</span>
+                <span className="text-emerald-600 text-[11px]">📋</span>
+                <span>Ficha Técnica Completa en PDF</span>
               </li>
             </ul>
           </div>
@@ -125,6 +145,7 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
           {/* Primary Action Button (Upsell $7.50) */}
           <button
             id="accept-upsell-offer-btn"
+            type="button"
             onClick={handleAccept}
             className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#2D5A27] to-[#3a7333] hover:from-[#23471e] hover:to-[#2e5d28] text-white font-black text-xs sm:text-[13px] uppercase tracking-wide shadow-md hover:shadow-lg transition-all cursor-pointer mb-2 flex items-center justify-center gap-1.5"
           >
@@ -134,7 +155,8 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
           {/* Secondary Action Button (Decline to Basic $5) */}
           <button
             id="decline-upsell-offer-btn"
-            onClick={handleDecline}
+            type="button"
+            onClick={handleDeclineToBasic}
             className="w-full py-1.5 px-3 rounded-lg border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-600 hover:text-stone-900 font-semibold text-[11px] transition-colors cursor-pointer"
           >
             No, gracias. Quiero continuar con el Kit Básico (US$5)
