@@ -9,6 +9,7 @@ import {
   Image as ImageIcon 
 } from 'lucide-react';
 import { IMAGE_ASSETS } from '../config';
+import { buildCheckoutUrl } from '../utils/utm';
 
 interface ClonedPricingProps {
   basicUrl: string;
@@ -39,7 +40,7 @@ export const ClonedPricing: React.FC<ClonedPricingProps> = ({
 
   const handleCheckoutComplete = () => {
     if (completeUrl) {
-      window.open(completeUrl, '_blank');
+      window.open(buildCheckoutUrl(completeUrl), '_blank');
     }
   };
 

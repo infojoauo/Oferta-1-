@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BASIC_OFFER_URL, UPSELL_OFFER_URL } from '../config';
+import { buildCheckoutUrl } from '../utils/utm';
 
 interface SpecialOfferModalProps {
   isOpen: boolean;
@@ -37,7 +38,7 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
     if (onAcceptUpsell) onAcceptUpsell();
     if (onClose) onClose();
     if (upsellUrl) {
-      window.open(upsellUrl, '_blank');
+      window.open(buildCheckoutUrl(upsellUrl), '_blank');
     }
   };
 
@@ -49,7 +50,7 @@ export const SpecialOfferModal: React.FC<SpecialOfferModalProps> = ({
       onClose();
     }
     if (basicUrl) {
-      window.open(basicUrl, '_blank');
+      window.open(buildCheckoutUrl(basicUrl), '_blank');
     }
   };
 
